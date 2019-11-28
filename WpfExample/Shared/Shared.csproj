@@ -1,0 +1,529 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E083133E-9D0A-4C34-996A-3B4DA71CC7B7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Shared</RootNamespace>
+    <AssemblyName>Shared</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Domain.Services">
+      <HintPath>..\Domain.Services\obj\Debug\netstandard2.0\Domain.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Infrastructure.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Domain.Services\bin\Debug\netstandard2.0\Infrastructure.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="Infrastructure.EF">
+      <HintPath>..\Domain.Services\bin\Debug\netstandard2.0\Infrastructure.EF.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism">
+      <HintPath>..\UtilsProjects\packages\Prism.4.1.0.0\lib\NET40\Microsoft.Practices.Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="DataGridHelper\ColumnCreator.cs" />
+    <Compile Include="DateSpan\DateSpanModel.cs" />
+    <Compile Include="DateSpan\DateSpanViewModel.cs" />
+    <Compile Include="DateSpan\IDateSpan.cs" />
+    <Compile Include="DateSpan\DateSpanPanel.xaml.cs">
+      <DependentUpon>DateSpanPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AttachedFiles\AttachedFileListForm.xaml.cs">
+      <DependentUpon>AttachedFileListForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AttachedFiles\AttachedFilePerformer.cs" />
+    <Compile Include="Forms\AttachedFiles\EditAttachedFileForm.xaml.cs">
+      <DependentUpon>EditAttachedFileForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChangeInfo\ChangeInfoPanel.xaml.cs">
+      <DependentUpon>ChangeInfoPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Panels\Block.xaml.cs">
+      <DependentUpon>Block.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Panels\ButtonsPanel.xaml.cs">
+      <DependentUpon>ButtonsPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Panels\ChangeInfoPanel.xaml.cs">
+      <DependentUpon>ChangeInfoPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Panels\CompanyNamePanel.xaml.cs">
+      <DependentUpon>CompanyNamePanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Panels\DatePeriodPanel.xaml.cs">
+      <DependentUpon>DatePeriodPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Panels\LinearLoadingAnimation.xaml.cs">
+      <DependentUpon>LinearLoadingAnimation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Panels\LoadingAnimation.xaml.cs">
+      <DependentUpon>LoadingAnimation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Panels\MonthPanel.xaml.cs">
+      <DependentUpon>MonthPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Panels\NoSelectionPanel.xaml.cs">
+      <DependentUpon>NoSelectionPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Panels\PagingPanel.xaml.cs">
+      <DependentUpon>PagingPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Panels\SelectedInfoPanel.xaml.cs">
+      <DependentUpon>SelectedInfoPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HighlightedCalendar\ColoredCalendar.cs" />
+    <Compile Include="HighlightedCalendar\ColoredCalendar.xaml.cs">
+      <DependentUpon>ColoredCalendar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HighlightedCalendar\ColoredDay.cs" />
+    <Compile Include="HighlightedCalendar\DateTimeExtensions.cs" />
+    <Compile Include="Managers\BaseBackgroundWorker.cs" />
+    <Compile Include="Managers\ChangeInfoManager.cs" />
+    <Compile Include="Managers\CurrentShipManager.cs" />
+    <Compile Include="Managers\MainEntityActionManager.cs" />
+    <Compile Include="Managers\FileManager.cs" />
+    <Compile Include="Managers\UI_ShipPropertyValue.cs" />
+    <Compile Include="Managers\UserManager.cs" />
+    <Compile Include="Managers\UsualEntityManager.cs" />
+    <Compile Include="Properties\Resources.en.Designer.cs">
+      <DependentUpon>Resources.en.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Services\Commands.cs" />
+    <Compile Include="Services\CurentUser_Settings.cs" />
+    <Compile Include="Services\FormActionsCompletion.cs" />
+    <Compile Include="Services\Module.cs" />
+    <Compile Include="Services\Settings.cs" />
+    <Compile Include="Managers\EntityItemManager.cs" />
+    <Compile Include="SpecialUnit\SpecialUnitViewModelOld.cs" />
+    <Compile Include="SpecialUnit\SpecialUnitPanel.xaml.cs">
+      <DependentUpon>SpecialUnitPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SpecialUnit\ComplexNumberOld.cs" />
+    <Compile Include="SpecialUnit\ComplexNumberPartOld.cs" />
+    <Compile Include="SpecialUnit\ValidatorVM.cs" />
+    <Compile Include="UIViewRules\Converters.cs" />
+    <Compile Include="UIViewRules\Enums.cs" />
+    <Compile Include="SpecialUnit\Coverters.cs" />
+    <Compile Include="SpecialUnit\ComplexNumber.cs" />
+    <Compile Include="SpecialUnit\SpecialUnitPanelOld.xaml.cs">
+      <DependentUpon>SpecialUnitPanelOld.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SpecialUnit\ComplexNumberPart.cs" />
+    <Compile Include="UIViewRules\ShipComparer.cs" />
+    <Compile Include="UI\CompanySettings\UI_CompanySetting.cs" />
+    <Compile Include="UI\Countries\UI_Country.cs" />
+    <Compile Include="UI\Vessel\UI_Ship.cs" />
+    <Compile Include="UI\Vessel\UI_ShipSetting.cs" />
+    <Compile Include="UI\Vessel\UI_ShipGroup.cs" />
+    <Compile Include="UI\Vessel\UI_ShipType.cs" />
+    <Compile Include="User\CH_Access.cs" />
+    <Compile Include="User\Forms\AuthorizationForm.xaml.cs">
+      <DependentUpon>AuthorizationForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User\Forms\CurrentUserPanel.xaml.cs">
+      <DependentUpon>CurrentUserPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User\Forms\UserAccessPanels\UserAccessPMSPanel.cs" />
+    <Compile Include="User\Forms\UserAccessPanels\UserAccessPMSPanel.xaml.cs">
+      <DependentUpon>UserAccessPMSPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User\Forms\UserForm.xaml.cs">
+      <DependentUpon>UserForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User\Forms\UserListPanel.xaml.cs">
+      <DependentUpon>UserListPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User\Forms\UsersForm.xaml.cs">
+      <DependentUpon>UsersForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User\Forms\UnauthorizedUserPanel.xaml.cs">
+      <DependentUpon>UnauthorizedUserPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User\UI_User.cs" />
+    <Compile Include="User\UserLoader.cs" />
+    <Compile Include="User\PMS_Access.cs" />
+    <Compile Include="User\Access.cs" />
+    <Compile Include="Vessel\AdditionalPropertiesForm.cs" />
+    <Compile Include="Vessel\AdditionalPropertiesForm.xaml.cs">
+      <DependentUpon>AdditionalPropertiesForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vessel\AdditionalPropertiesForVesselPanelOld.xaml.cs">
+      <DependentUpon>AdditionalPropertiesForVesselPanelOld.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vessel\AdditionalPropertiesForVesselPanel.xaml.cs">
+      <DependentUpon>AdditionalPropertiesForVesselPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vessel\SelectFuelTypeViewModel.cs" />
+    <Compile Include="Vessel\ShipGroup.xaml.cs">
+      <DependentUpon>ShipGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vessel\VesselPropertiesViewPanel.xaml.cs">
+      <DependentUpon>VesselPropertiesViewPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vessel\VesselPropertiesPanel.xaml.cs">
+      <DependentUpon>VesselPropertiesPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vessel\VesselChoicePanel.xaml.cs">
+      <DependentUpon>VesselChoicePanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Managers\ShipManager.cs" />
+    <Compile Include="Vessel\VesselChoiceViewModel.cs" />
+    <Compile Include="Vessel\VesselPanel.xaml.cs">
+      <DependentUpon>VesselPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vessel\VesselsForm.xaml.cs">
+      <DependentUpon>VesselsForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vessel\VesselTypesView.xaml.cs">
+      <DependentUpon>VesselTypesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vessel\ShipownerPanel.xaml.cs">
+      <DependentUpon>ShipownerPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\Panels\AdditionalPropertiesForVesselViewModel.cs" />
+    <Compile Include="ViewModels\Panels\SelectedInfoPanelViewModel.cs" />
+    <Compile Include="ViewModels\Services\CountryService.cs" />
+    <Compile Include="ViewModels\Services\CompanySettingService.cs" />
+    <Compile Include="ViewModels\Services\Vessel\ShipService.cs" />
+    <Compile Include="ViewModels\Services\Vessel\ShipGroupService.cs" />
+    <Compile Include="ViewModels\Services\Vessel\ShipTypeService.cs" />
+    <Compile Include="ViewModels\Vessel\ShipTypeModifyViewModel.cs" />
+    <Compile Include="ViewModels\Vessel\ShipGroupModifyViewModel.cs" />
+    <Compile Include="ViewModels\Vessel\ShipTypesViewModel.cs" />
+    <Compile Include="ViewModels\Vessel\ShipGroupsViewModel.cs" />
+    <Compile Include="ViewModels\Countries\CountriesViewModel.cs" />
+    <Compile Include="ViewModels\Countries\CountryModifyViewModel.cs" />
+    <Compile Include="Views\Countries\CountriesView.xaml.cs">
+      <DependentUpon>CountriesView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="DateSpan\DateSpanPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\AttachedFiles\AttachedFileListForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\AttachedFiles\EditAttachedFileForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\ChangeInfo\ChangeInfoPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Panels\Block.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Panels\ButtonsPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Panels\ChangeInfoPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Panels\CompanyNamePanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Panels\DatePeriodPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Panels\LinearLoadingAnimation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Panels\LoadingAnimation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Panels\MonthPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Panels\NoSelectionPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Panels\PagingPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Panels\SelectedInfoPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HighlightedCalendar\ColoredCalendar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="OwnResources\Images\Images.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SpecialUnit\SpecialUnitPanelOld.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SpecialUnit\SpecialUnitPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\SpecialUnitPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="User\Forms\AuthorizationForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="User\Forms\CurrentUserPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="User\Forms\UserAccessPanels\UserAccessPMSPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User\Forms\UserForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="User\Forms\UserListPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="User\Forms\UsersForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="User\Forms\UnauthorizedUserPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Vessel\AdditionalPropertiesForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vessel\AdditionalPropertiesForVesselPanelOld.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Vessel\AdditionalPropertiesForVesselPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vessel\ShipGroup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Vessel\VesselPropertiesViewPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Vessel\VesselPropertiesPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Vessel\VesselChoicePanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Vessel\VesselPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vessel\VesselsForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vessel\VesselTypesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="Vessel\ShipownerPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Countries\CountriesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.en.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\InspectionModule.Reports.ReportEntities.ReportInspection.datasource" />
+    <None Include="Properties\DataSources\InspectionModule.Reports.ReportEntities.ReportInspectionList.datasource" />
+    <None Include="Properties\DataSources\InspectionsManagmentModule.Reports.ReportEntities.FullQuestionnaire.datasource" />
+    <None Include="Properties\DataSources\InspectionsManagmentModule.Reports.ReportEntities.SectionQuestionnaire.datasource" />
+    <None Include="Properties\DataSources\PMSModule.Reports.ReportEntities.ReportJobPlan.datasource" />
+    <None Include="Properties\DataSources\PMSModule.Reports.ReportEntities1.ReportJobPlan.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DBServices\DBServices.csproj">
+      <Project>{9AD4823F-9BC6-4D3D-8615-FE75DDD33C2E}</Project>
+      <Name>DBServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.Common\Domain.Common.csproj">
+      <Project>{18E461EC-C76F-491F-BF0D-EC5E372E86BC}</Project>
+      <Name>Domain.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain\Domain.Models\Domain.Models.csproj">
+      <Project>{28549CB3-0AA7-4757-B167-D6F9DB68F231}</Project>
+      <Name>Domain.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilsProjects\BaseLib\BaseLib.csproj">
+      <Project>{66c9ff27-ff7d-4cd5-a089-2a2f7ef593cf}</Project>
+      <Name>BaseLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilsProjects\Converters\Converters.csproj">
+      <Project>{f0171d03-5ba5-4f4a-8d4a-53776cbd0b67}</Project>
+      <Name>Converters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilsProjects\MVVMHelper\MVVMHelper.csproj">
+      <Project>{1de7ae54-31c6-41c0-9944-e887bcf60769}</Project>
+      <Name>MVVMHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilsProjects\Resources\Resources.csproj">
+      <Project>{b99158fb-50ee-406e-951d-cc3551566ebf}</Project>
+      <Name>Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilsProjects\UIMessager\UIMessager.csproj">
+      <Project>{6391d4de-08d5-49e8-a90c-2c924724abb4}</Project>
+      <Name>UIMessager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilsProjects\UI\UI.csproj">
+      <Project>{adc48582-be79-4601-a428-5c88d89ca328}</Project>
+      <Name>UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewModelBaseSolutions\ViewModelBaseSolutions.csproj">
+      <Project>{B8A313EB-0742-4803-9EA3-FC845584307D}</Project>
+      <Name>ViewModelBaseSolutions</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="OwnResources\Images\button blue\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="OwnResources\Images\button blue\login.png" />
+    <Resource Include="OwnResources\Images\button blue\logout.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

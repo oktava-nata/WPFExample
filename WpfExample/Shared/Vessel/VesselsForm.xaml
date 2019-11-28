@@ -1,0 +1,150 @@
+﻿<Window x:Class="Shared.Vessel.VesselsForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:strRes="clr-namespace:Shared.Properties"  
+        xmlns:baseLib="clr-namespace:BaseLib.Services;assembly=BaseLib"    
+        xmlns:strCommonRes="clr-namespace:Resources.Properties;assembly=Resources"
+        xmlns:convertToStr="clr-namespace:Converters.ToStringFormat;assembly=Converters"
+        xmlns:convertToVis ="clr-namespace:Converters.ToVisibility;assembly=Converters"
+        xmlns:local="clr-namespace:Shared.UIViewRules"
+        xmlns:cmd ="clr-namespace:Resources.Services;assembly=Resources"
+        Title="{x:Static strCommonRes:ResourcesReplaced.txtFleetManagement}" 
+        Height="600" Width="870" MinHeight="600" MinWidth="500" x:Name="vesselsForm"
+        WindowStartupLocation="CenterScreen" Loaded="VesselsForm_Loaded" Unloaded="VesselsForm_Unloaded" Style="{StaticResource StandartWindowStyle}">
+    <Grid Style="{StaticResource FormGrid}">
+        <Grid.Resources>
+            <convertToStr:DateToShortDateStringConverter x:Key="DateConverter"/>
+            <convertToStr:ENRUToStringConverter  x:Key="ENRUToStringConverter"/>
+            <convertToVis:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+            <convertToVis:BoolToVisibilityReverseConverter x:Key="BoolToVisibilityReverseConverter"/>
+            <Style x:Key="DataGridColumnHeaderWithToolTip" TargetType="{x:Type DataGridColumnHeader}"
+                   BasedOn="{StaticResource BaseDataGridColumnHeader}">
+                <Setter Property="ToolTip" Value="{x:Static strRes:Resources.txtPrefixRequistionDescription}"/>
+            </Style>
+            <local:UnitOfCargoConverter x:Key="UnitOfCargoConverter"/>
+            <!--используется для реализации привязки к DataGridTemplateColumn -->
+            <FrameworkElement x:Key="ProxyElement" DataContext="{Binding ElementName=vesselsForm}"/>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <!--используется для реализации привязки к DataGridTemplateColumn -->
+        <ContentControl Visibility="Collapsed"  Content="{StaticResource ProxyElement}"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right"
+                    Visibility="{Binding ElementName=vesselsForm, Path=HasAccessOnModify, Converter={StaticResource BoolToVisibilityConverter}}">
+            <!--типы судов-->
+            <Button Click="BtnVesselTypes_Click" MinWidth="100"
+                    Content="{x:Static strCommonRes:ResourcesReplaced.txtVesselTypes}" Style="{StaticResource BottomButton}" />
+            <!--группы судов-->
+            <Button Click="BtnShipGroup_Click" MinWidth="100"
+                    Content="{x:Static strCommonRes:ResourcesReplaced.txtShipsGroups}" Style="{StaticResource BottomButton}" />
+            <Button Click="BtnAdditionalProperties_Click" MinWidth="160"
+                    Content="{x:Static strRes:Resources.txtAdditionalProperties}" Style="{StaticResource BottomButton}"/>
+        </StackPanel>
+        
+        <!--Список судов-->
+        <GroupBox Grid.Row="1" Header="{x:Static strCommonRes:ResourcesReplaced.txtFleetManagement}" >            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <!--Меню-->
+                <ToolBar x:Name="Menu">
+                    <Button Style="{StaticResource MenuButton}" Command="cmd:MenuCommands.Add" x:Name="MBtn_Add"
+                            ToolTip="{Binding RelativeSource={RelativeSource Self}, Path=Command.Text}" >
+                        <Image Source="{StaticResource BtnAdd}" />
+                    </Button>
+                    <Button Style="{StaticResource MenuButton}" Command="cmd:MenuCommands.Edit" x:Name="MBtn_Edit"
+                            ToolTip="{Binding RelativeSource={RelativeSource Self}, Path=Command.Text}" >
+                       <Image Source="{StaticResource BtnEdit}" />
+                    </Button>
+                    <Button Style="{StaticResource MenuButton}" Command="cmd:MenuCommands.View" 
+                            ToolTip="{Binding RelativeSource={RelativeSource Self}, Path=Command.Text}" >
+                        <Image Source="{StaticResource BtnView}"/>
+                    </Button>
+                    <Button Style="{StaticResource MenuButton}"  Command="cmd:MenuCommands.Delete" x:Name="MBtn_Del"
+                            ToolTip="{Binding RelativeSource={RelativeSource Self}, Path=Command.Text}" >
+                        <Image Source="{StaticResource BtnDel}"/>
+                    </Button>
+                    <Separator/>
+                    <Button Style="{StaticResource MenuButton}"  Command="cmd:MenuCommands.Files" 
+                            ToolTip="{Binding RelativeSource={RelativeSource Self}, Path=Command.Text}" >
+                        <Image Source="{StaticResource BtnFile}" />
+                    </Button>
+                </ToolBar>
+
+                <!--таблица-->
+                <DataGrid  Grid.Row="1" x:Name="GridOfVessels" ItemsSource="{Binding ElementName=vesselsForm, Path=ShipList}" 
+                           SelectedItem="{Binding ElementName=vesselsForm, Path=SelectShip}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="{x:Static strCommonRes:Resources.txtSortNumber}" Binding="{Binding Path=SortNumber}" 
+                                            Width="auto" MinWidth="40"/>
+                        <DataGridTextColumn Header="{x:Static strCommonRes:ResourcesReplaced.txtIMO}" Binding="{Binding Path=Number}" 
+                                            Width="auto" MinWidth="100"/>
+                        <DataGridTextColumn Header="{x:Static strCommonRes:ResourcesReplaced.txtVesselName}" Binding="{Binding Path=Name}" 
+                                            Width="*" MinWidth="160" ElementStyle="{StaticResource TextInCell}"/>
+                        <DataGridTextColumn Header="{x:Static strCommonRes:ResourcesReplaced.txtVesselType}" Binding="{Binding Path=Type.NameForView}"
+                                            Width="*" MinWidth="120" ElementStyle="{StaticResource TextInCell}"/>
+                        <!--Доделать binding для судовладельца-->
+                        <DataGridTextColumn Header="{x:Static strCommonRes:ResourcesReplaced.txtShipowner}" Binding="{Binding Path=CurrentShipOwner}"
+                                            Width="*" MinWidth="120" ElementStyle="{StaticResource TextInCell}"/>
+                        <DataGridTextColumn Header="{x:Static strCommonRes:ResourcesReplaced.txtShipGroup}" Binding="{Binding Path=Group.Name}"
+                                            Width="*" MinWidth="150" ElementStyle="{StaticResource TextInCell}"/>
+                        <!-- Государство флага судна. Надо скрывать для IndependentCompany-->
+                        <DataGridTextColumn Header="{x:Static strCommonRes:ResourcesReplaced.txtVesselCountryFlag}" Binding="{Binding Path=Setting.Country.NameForView}"
+                                            Width="*" MinWidth="150" ElementStyle="{StaticResource TextInCell}"
+                                            Visibility="{Binding Path=DataContext.IsIndependent, Source={StaticResource ProxyElement},
+                                            Converter={StaticResource BoolToVisibilityReverseConverter}}"
+                                            />
+                        <!--Единицы груза. Если  Setting не заданы, то отображаем ед.груза по умолчанию т.-->
+                        <DataGridTextColumn Header="{x:Static strRes:Resources.txtUnitOfCargo}" 
+                                            Binding="{Binding Path=Setting.UnitOfCargo, Converter={StaticResource UnitOfCargoConverter}, FallbackValue={x:Static strRes:Resources.unit_of_cargo_t}}"
+                                            Width="80" MinWidth="80" ElementStyle="{StaticResource TextInCell}"
+                                           Visibility="{Binding Path=DataContext.IsShowMRVInfo, Source={StaticResource ProxyElement},
+                                            Converter={StaticResource BoolToVisibilityConverter}}"
+                                            />
+                        <DataGridTextColumn Header="{x:Static strCommonRes:ResourcesReplaced.txtIssueDate}" 
+                                            Binding="{Binding Path=IssueDate, Converter={StaticResource DateConverter}}"  
+                                            Width="80" MinWidth="80" />
+                        <DataGridTextColumn Header="{x:Static strRes:Resources.txtPrefixRequistion}" 
+                                            HeaderStyle="{StaticResource DataGridColumnHeaderWithToolTip}"
+                                            Binding="{Binding Path=Setting.Prefix}" 
+                                            Width="80" MinWidth="80"
+                                            x:Name="PrefixReq"/>
+                    </DataGrid.Columns>
+
+                    <DataGrid.ContextMenu>
+                        <ContextMenu x:Name="ContextMenu" >
+                            <MenuItem Header="{Binding RelativeSource={RelativeSource Self}, Path=Command.Text}" Command="cmd:MenuCommands.Edit" x:Name="MCBtn_Edit">
+                                <MenuItem.Icon>
+                                    <Image Source="{StaticResource BtnEdit}" Style="{StaticResource MenuItemImage}"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Header="{Binding RelativeSource={RelativeSource Self}, Path=Command.Text}" Command="cmd:MenuCommands.View" >
+                                <MenuItem.Icon>
+                                    <Image Source="{StaticResource BtnView}" Style="{StaticResource MenuItemImage}" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Header="{Binding RelativeSource={RelativeSource Self}, Path=Command.Text}" Command="cmd:MenuCommands.Delete" x:Name="MCBtn_Del" >
+                                <MenuItem.Icon>
+                                    <Image Source="{StaticResource BtnDel}" Style="{StaticResource MenuItemImage}" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+
+                            <Separator/>
+
+                            <MenuItem Header="{Binding RelativeSource={RelativeSource Self}, Path=Command.Text}" Command="cmd:MenuCommands.Files">
+                                <MenuItem.Icon>
+                                    <Image Source="{StaticResource BtnFile}" Style="{StaticResource MenuItemImage}" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                        </ContextMenu>
+                    </DataGrid.ContextMenu>
+                </DataGrid>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>

@@ -1,0 +1,96 @@
+﻿<UserControl x:Class="Shared.Vessels.VesselChoicePanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:strRes="clr-namespace:Shared.Properties"           
+             xmlns:validators="clr-namespace:Resources.Validators;assembly=Resources"
+             xmlns:convertToVisibility="clr-namespace:Converters.ToVisibility;assembly=Converters"
+             xmlns:strCommonRes="clr-namespace:Resources.Properties;assembly=Resources"
+             mc:Ignorable="d" 
+             d:DesignHeight="70" d:DesignWidth="300" >
+    <UserControl.Resources>
+        <convertToVisibility:BoolToVisibilityConverter x:Key="boolToVisibilityConverter" />
+        <convertToVisibility:BoolToVisibilityReverseConverter x:Key="boolToVisibilityReverseConverter"/>
+        <convertToVisibility:ConjunctionBoolValuesToVisibleMultiConverter x:Key="BoolToVisibilityMultiConverter" />
+        <convertToVisibility:ObjIsNullToVisibilityReverseConverter x:Key="ObjIsNullToVisibilityReverseConverter"/>
+
+    </UserControl.Resources>
+    <Border Width="250"  Margin="5">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel VerticalAlignment="Center">
+                <StackPanel Visibility="{Binding Path=BigOneLineName, Converter={StaticResource boolToVisibilityReverseConverter}}" >
+                    <TextBlock Text="{Binding Path=CurrentShip.Name, FallbackValue={x:Static strCommonRes:ResourcesReplaced.txtSelectVessel}}" 
+                           TextWrapping="NoWrap" FontWeight="Bold" TextTrimming="CharacterEllipsis" TextAlignment="Right"/>
+                    <TextBlock  Text="{Binding Path=CurrentShip.Number}" TextWrapping="NoWrap"  
+                            Visibility="{Binding Path=CurrentShip, Converter={StaticResource ObjIsNullToVisibilityReverseConverter}}"
+                            TextTrimming="CharacterEllipsis" TextAlignment="Right"/>
+                </StackPanel>
+                <Grid Visibility="{Binding Path=BigOneLineName, Converter={StaticResource boolToVisibilityConverter}}">
+                    <TextBlock Text="{Binding Path=CurrentShip.Name, FallbackValue={x:Static strCommonRes:ResourcesReplaced.txtSelectVessel}}" 
+                               HorizontalAlignment="Center" TextAlignment="Center"
+                           TextWrapping="NoWrap" FontWeight="Bold" TextTrimming="CharacterEllipsis" FontSize="18"/>
+                </Grid>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Margin="0" Orientation="Horizontal" VerticalAlignment="Center">
+                <StackPanel.Visibility>
+                    <MultiBinding Converter="{StaticResource BoolToVisibilityMultiConverter}">
+                        <Binding Path="CouldChangeSelectingShip" />
+                        <Binding Path="CouldHasManyVessels" />
+                    </MultiBinding>
+                </StackPanel.Visibility>
+                <Button ToolTip="{x:Static strCommonRes:Resources.txtSelect}" Command="{Binding ShowShipListCommand}"
+                        Style="{StaticResource ChoiceSmallButton}" VerticalAlignment="Center" 
+                        Visibility="{Binding Path=BigOneLineName, Converter={StaticResource boolToVisibilityReverseConverter}}"/>
+                <Button Style="{StaticResource TransparentButton}" 
+                        Visibility="{Binding Path=CouldUnSelectShip, Converter={StaticResource boolToVisibilityConverter}}"
+                        ToolTip="{x:Static strCommonRes:Resources.txtCancel}" VerticalAlignment="Center" Command="{Binding UnSelectShipCommand}">
+                    <Image Source="{StaticResource BtnX_Blue}"/>
+                </Button>
+                <Grid VerticalAlignment="Center"
+                    Visibility="{Binding Path=BigOneLineName, Converter={StaticResource boolToVisibilityConverter}}">
+                    <Rectangle Fill="{StaticResource GreenShipBrush}"/>
+                    <Button Style="{StaticResource TransparentButton}" VerticalAlignment="Center" Command="{Binding ShowShipListCommand}">
+                        <Image Source="{StaticResource BtnDown}"/>
+                    </Button>
+                </Grid>
+                <Popup AllowsTransparency="True" StaysOpen="False" PopupAnimation="Slide" Placement="Left"
+                       IsOpen="{Binding IsShowVesselList}">
+                    <Border Style="{StaticResource PopupBorder}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.Resources>
+                                <Style x:Key="ColumnHeaderStyleGotMouseCapture" TargetType="{x:Type DataGridColumnHeader}" BasedOn="{StaticResource BaseDataGridColumnHeader}">
+                                    <EventSetter Event="GotMouseCapture" Handler="tab_GotMouseCapture"/>
+                                </Style>
+                            </Grid.Resources>
+                            <!-- таблица -->
+                            <DataGrid Grid.Row="0" Height="500" Width="300" ItemsSource="{Binding Path=ShipList}" 
+                                      CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserSortColumns="False" 
+                                      Name="tab">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="{x:Static strCommonRes:ResourcesReplaced.txtVesselName}" Width="*" MinWidth="100"
+                                                        Binding="{Binding Path=Name}" ElementStyle="{StaticResource TextInCell}" HeaderStyle="{StaticResource ColumnHeaderStyleGotMouseCapture}"/>
+                                    <DataGridTextColumn Header="{x:Static strCommonRes:Resources.txtIMO}" Width="auto" MinWidth="80"
+                                                        Binding="{Binding Path=Number}" HeaderStyle="{StaticResource ColumnHeaderStyleGotMouseCapture}"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                            <!--<StackPanel  Grid.Row="1" Style="{StaticResource SlimBottomButtonGroup}">
+                                <Button Content="{x:Static strCommonRes:Resources.txtSelect}"                                     
+                                    Click="BthSelectVessel_Click" Style="{StaticResource BottomButton}" />
+                            </StackPanel>-->
+                        </Grid>
+                    </Border>
+                </Popup>
+            </StackPanel>
+        </Grid>
+
+    </Border>
+</UserControl>

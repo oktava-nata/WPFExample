@@ -1,0 +1,382 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="fFleetMonitor" xml:space="preserve">
+    <value>---</value>
+    <comment>MenuButtonPanel</comment>
+  </data>
+  <data name="mConfirmDelDocumentsAtAllVessels" xml:space="preserve">
+    <value>Данный документ будет удален на каждом терминале!
+Вы уверены, что хотите продолжить?</value>
+    <comment>DMS</comment>
+  </data>
+  <data name="mConfirmDelShip" xml:space="preserve">
+    <value>---</value>
+    <comment>Vessel</comment>
+  </data>
+  <data name="mConfirmDelShipType" xml:space="preserve">
+    <value>---</value>
+    <comment>VesselType</comment>
+  </data>
+  <data name="mNotDelShipTypeBecauseHasShips" xml:space="preserve">
+    <value>---</value>
+    <comment>VesselType</comment>
+  </data>
+  <data name="txtChangesAllShips" xml:space="preserve">
+    <value>---</value>
+  </data>
+  <data name="txtChangeVesselForVisibleDoc" xml:space="preserve">
+    <value>Необходимо выбрать терминал, где будет скрываться документ</value>
+    <comment>3.0.1</comment>
+  </data>
+  <data name="txtChooseShipsForCountersCopy" xml:space="preserve">
+    <value>---</value>
+    <comment>2.1.13</comment>
+  </data>
+  <data name="txtCommentForShip" xml:space="preserve">
+    <value>---</value>
+    <comment>Requisition</comment>
+  </data>
+  <data name="txtCreatedByVessel" xml:space="preserve">
+    <value>Создано терминалом:</value>
+  </data>
+  <data name="txtEditedByVessel" xml:space="preserve">
+    <value>Изменено терминалом:</value>
+  </data>
+  <data name="txtFleet" xml:space="preserve">
+    <value>Терминал</value>
+  </data>
+  <data name="txtFleetManagement" xml:space="preserve">
+    <value>----</value>
+    <comment>FleetForm</comment>
+  </data>
+  <data name="txtForViewingDataForVessel" xml:space="preserve">
+    <value>Для просмотра данных выберите терминал.</value>
+    <comment>FleetForm</comment>
+  </data>
+  <data name="txtIMO" xml:space="preserve">
+    <value>IMO</value>
+  </data>
+  <data name="txtIssueDate" xml:space="preserve">
+    <value>Дата выпуска</value>
+  </data>
+  <data name="txtLastVesselExportDate" xml:space="preserve">
+    <value>---</value>
+    <comment>PMS</comment>
+  </data>
+  <data name="txtMasterName" xml:space="preserve">
+    <value>Ф.И.О.</value>
+    <comment>Reports</comment>
+  </data>
+  <data name="txtMasterSignature" xml:space="preserve">
+    <value>Подпись</value>
+    <comment>Reports</comment>
+  </data>
+  <data name="txtMenuFleetDirectories" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="txtMenuVesselDirectories" xml:space="preserve">
+    <value>Справочники терминала</value>
+  </data>
+  <data name="txtOrdersForVessels" xml:space="preserve">
+    <value>----</value>
+    <comment>Store</comment>
+  </data>
+  <data name="txtReportStatisticTotal1" xml:space="preserve">
+    <value>---</value>
+    <comment>Statistic</comment>
+  </data>
+  <data name="txtReportStatisticTotal2" xml:space="preserve">
+    <value>---</value>
+    <comment>Statistic</comment>
+  </data>
+  <data name="txtReportStatisticTotal3" xml:space="preserve">
+    <value>---</value>
+    <comment>Statistic</comment>
+  </data>
+  <data name="txtRequisitionItemNumToolTip_Delivered" xml:space="preserve">
+    <value>---</value>
+    <comment>Requisition</comment>
+  </data>
+  <data name="txtRequisitionItemNumToolTip_OrderByShip" xml:space="preserve">
+    <value>---</value>
+    <comment>Requisition</comment>
+  </data>
+  <data name="txtRequisitionItemsToolTip" xml:space="preserve">
+    <value>---</value>
+    <comment>Requisition</comment>
+  </data>
+  <data name="txtReservedForVessel" xml:space="preserve">
+    <value>Зарезервировано для терминала</value>
+    <comment>Store</comment>
+  </data>
+  <data name="txtReserverForVessels" xml:space="preserve">
+    <value>----</value>
+    <comment>Store</comment>
+  </data>
+  <data name="txtRolePMSShipCatalogueManager" xml:space="preserve">
+    <value>Менеджер каталога</value>
+    <comment>user PMS</comment>
+  </data>
+  <data name="txtSelectVessel" xml:space="preserve">
+    <value>Выберите терминал</value>
+    <comment>VesselChoicePanel</comment>
+  </data>
+  <data name="txtSelectVesselMess" xml:space="preserve">
+    <value>Выберите терминал!</value>
+  </data>
+  <data name="txtShipGroup" xml:space="preserve">
+    <value>---</value>
+    <comment>Statistic</comment>
+  </data>
+  <data name="txtShipsGroup" xml:space="preserve">
+    <value>---</value>
+    <comment>Statistic</comment>
+  </data>
+  <data name="txtShipsGroups" xml:space="preserve">
+    <value>---</value>
+    <comment>Statistic</comment>
+  </data>
+  <data name="txtShowReqForFleet" xml:space="preserve">
+    <value>---</value>
+    <comment>Requisition</comment>
+  </data>
+  <data name="txtSpareLibTabVesselCat" xml:space="preserve">
+    <value>Каталог</value>
+    <comment>Spare Library</comment>
+  </data>
+  <data name="txtStoreSectionVessel" xml:space="preserve">
+    <value>Раздел склада терминала</value>
+    <comment>2.1.8</comment>
+  </data>
+  <data name="txtVessel" xml:space="preserve">
+    <value>Терминал</value>
+  </data>
+  <data name="txtVesselCatalogue" xml:space="preserve">
+    <value>Каталог</value>
+    <comment>VesselCataloguePanel</comment>
+  </data>
+  <data name="txtVesselChoiceForCopy" xml:space="preserve">
+    <value>---</value>
+    <comment>2.1.11</comment>
+  </data>
+  <data name="txtVesselDocManagement" xml:space="preserve">
+    <value>Управление сертификатами терминала</value>
+    <comment>DMS</comment>
+  </data>
+  <data name="txtVesselExportDate" xml:space="preserve">
+    <value>---</value>
+    <comment>Monitoring</comment>
+  </data>
+  <data name="txtVesselName" xml:space="preserve">
+    <value>Название терминала</value>
+  </data>
+  <data name="txtVesselNameLic" xml:space="preserve">
+    <value>Название терминала:</value>
+  </data>
+  <data name="txtVesselType" xml:space="preserve">
+    <value>---</value>
+    <comment>VesselTypeForm</comment>
+  </data>
+  <data name="txtVesselTypeData" xml:space="preserve">
+    <value>---</value>
+    <comment>VesselTypeForm</comment>
+  </data>
+  <data name="txtVesselTypeName" xml:space="preserve">
+    <value>---</value>
+    <comment>VesselTypeForm</comment>
+  </data>
+  <data name="txtVesselTypes" xml:space="preserve">
+    <value>---</value>
+    <comment>VesselTypeForm</comment>
+  </data>
+  <data name="txtSpareDeleteTextReport" xml:space="preserve">
+    <value>Комиссия составила и утвердила настоящий акт в том, что нижепоименованные СЗЧ и материалы были установлены, израсходованы и подлежат списанию.</value>
+    <comment>3.0.3</comment>
+  </data>
+  <data name="txtForChangingVesselSheduler" xml:space="preserve">
+    <value>---</value>
+    <comment>Equipage</comment>
+  </data>
+  <data name="txtModePeriodList" xml:space="preserve">
+    <value>---</value>
+    <comment>Equipage</comment>
+  </data>
+  <data name="txtOnBoard" xml:space="preserve">
+    <value>---</value>
+    <comment>Equipage</comment>
+  </data>
+  <data name="txtTableOfWorkArrangements" xml:space="preserve">
+    <value>---</value>
+    <comment>Equipage</comment>
+  </data>
+  <data name="txtCreateRecoverPackageText" xml:space="preserve">
+    <value>---</value>
+    <comment>3.0.6 RestoreDB</comment>
+  </data>
+  <data name="txtRecoveringShipDB" xml:space="preserve">
+    <value>---</value>
+    <comment>3.0.6 RestoreDB</comment>
+  </data>
+  <data name="txtUnitOfCargoTextForUser" xml:space="preserve">
+    <value>---</value>
+    <comment>MRV</comment>
+  </data>
+  <data name="txtFuelTypeEmissionFactor" xml:space="preserve">
+    <value>Фактор выброса
+(т. CO2/ т. топлива)</value>
+    <comment>MRV</comment>
+  </data>
+  <data name="txtFuelTypeName" xml:space="preserve">
+    <value>Тип топлива</value>
+    <comment>MRV</comment>
+  </data>
+  <data name="txtFuelTypeShortName" xml:space="preserve">
+    <value>Короткое наименование</value>
+    <comment>MRV</comment>
+  </data>
+  <data name="txtFuelTypeIsUseOnShip" xml:space="preserve">
+    <value>---</value>
+    <comment>MRV</comment>
+  </data>
+  <data name="txtFuelTypeIsUseOnShipView" xml:space="preserve">
+    <value>---</value>
+    <comment>MRV</comment>
+  </data>
+  <data name="txtShipFuelTypeListIsEmpty" xml:space="preserve">
+    <value>---</value>
+    <comment>MRV</comment>
+  </data>
+  <data name="txtForFleet" xml:space="preserve">
+    <value>---</value>
+    <comment>HSEQ</comment>
+  </data>
+  <data name="txtForShip" xml:space="preserve">
+    <value>---</value>
+    <comment>HSEQ</comment>
+  </data>
+  <data name="txtCreatedByVesselInfo" xml:space="preserve">
+    <value>Создано терминалом</value>
+    <comment>подсказка к рисунку</comment>
+  </data>
+  <data name="txtVesselTypeNameEng" xml:space="preserve">
+    <value>---</value>
+    <comment>4.0.3</comment>
+  </data>
+</root>

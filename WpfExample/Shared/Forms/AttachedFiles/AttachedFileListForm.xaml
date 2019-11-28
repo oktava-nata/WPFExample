@@ -1,0 +1,88 @@
+﻿<Window x:Class="Shared.Forms.AttachedFiles.AttachedFileListForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:strRes="clr-namespace:Shared.Properties"   
+        xmlns:strCommonRes="clr-namespace:Resources.Properties;assembly=Resources"
+        xmlns:convToStr="clr-namespace:Converters.ToStringFormat;assembly=Converters" 
+        xmlns:cmd ="clr-namespace:Resources.Services;assembly=Resources"
+        WindowStartupLocation="CenterScreen"
+        Title="{x:Static strCommonRes:Resources.txtFiles}" Height="400" Width="500" MinHeight="200" MinWidth="400"
+        Loaded="AttachedFileListForm_Loaded" Unloaded="AttachedFileListForm_Unloaded" x:Name="attachedFilesPanel"  Style="{StaticResource StandartWindowStyle}">
+    <Grid Style="{StaticResource FormGrid}">
+        <Grid >
+            <Grid.Resources>
+                <convToStr:FileSizeConverter x:Key="FileSizeConverter" />
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+
+            <!--Меню-->
+            <ToolBar x:Name="Menu" Grid.Column="1" Style="{StaticResource ToolBarVertical}">
+                <Button Style="{StaticResource TransparentButtonBig}" Command="cmd:MenuCommands.OpenFile" 
+                            ToolTip="{Binding RelativeSource={RelativeSource Self}, Path=Command.Text}">
+                    <Image Source="{StaticResource BtnOpenFile}" />
+                </Button>
+                <Button Style="{StaticResource TransparentButtonBig}"  Command="cmd:MenuCommands.DownloadFile"
+                            ToolTip="{Binding RelativeSource={RelativeSource Self}, Path=Command.Text}">
+                    <Image Source="{StaticResource BtnDownload}"/>
+                </Button>
+                <Button Style="{StaticResource TransparentButtonBig}" Command="cmd:MenuCommands.Add" x:Name="BtnM_Add" 
+                            ToolTip="{Binding RelativeSource={RelativeSource Self}, Path=Command.Text}" >
+                    <Image Source="{StaticResource BtnAdd}" />
+                </Button>
+                <Button Style="{StaticResource TransparentButtonBig}" Command="cmd:MenuCommands.Edit" x:Name="BtnM_Edit" 
+                            ToolTip="{Binding RelativeSource={RelativeSource Self}, Path=Command.Text}" >
+                   <Image Source="{StaticResource BtnEdit}" />
+                </Button>
+                <Button Style="{StaticResource TransparentButtonBig}" Command="cmd:MenuCommands.Delete" x:Name="BtnM_Delete" 
+                            ToolTip="{Binding RelativeSource={RelativeSource Self}, Path=Command.Text}" >
+                    <Image Source="{StaticResource BtnDel}"/>
+                </Button>
+            </ToolBar>
+
+            <!--таблица-->
+            <DataGrid  Grid.Row="1" x:Name="GridFiles" SelectedItem="{Binding ElementName=attachedFilesPanel, Path=SelectedFile}"
+                   ItemsSource="{Binding ElementName=attachedFilesPanel, Path=FileList}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="{x:Static strCommonRes:Resources.txtFileName}" ElementStyle="{StaticResource TextInCell}"
+                                    Width="*" MinWidth="200" Binding="{Binding Path=FileName}"/>
+                    <DataGridTextColumn Header="{x:Static strCommonRes:Resources.txtFileFormat}" 
+                                    Width="auto" MinWidth="60" Binding="{Binding Path=FileExtension}"/>
+                    <DataGridTextColumn Header="{x:Static strCommonRes:Resources.txtFileSize}" 
+                                    Width="auto" MinWidth="60" Binding="{Binding Path=FileSize, Converter={StaticResource FileSizeConverter}}"/>
+                    <DataGridTextColumn Header="{x:Static strCommonRes:Resources.txtFileDescription}" ElementStyle="{StaticResource TextInCell}"
+                                    Width="*" MinWidth="300" Binding="{Binding Path=Description}" />
+                </DataGrid.Columns>
+
+                <DataGrid.ContextMenu>
+                    <ContextMenu x:Name="ContextMenu" >
+                        <MenuItem Command="cmd:MenuCommands.OpenFile" Header="{Binding RelativeSource={RelativeSource Self}, Path=Command.Text}">
+                            <MenuItem.Icon>
+                                <Image   Source="{StaticResource BtnOpenFile}" Style="{StaticResource MenuItemImage}"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem  Command="cmd:MenuCommands.DownloadFile" Header="{Binding RelativeSource={RelativeSource Self}, Path=Command.Text}">
+                            <MenuItem.Icon>
+                                <Image   Source="{StaticResource BtnDownload}" Style="{StaticResource MenuItemImage}"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Command="cmd:MenuCommands.Edit"  x:Name="BtnMC_Edit" 
+                              Header="{Binding RelativeSource={RelativeSource Self}, Path=Command.Text}">
+                            <MenuItem.Icon>
+                                <Image Source="{StaticResource BtnEdit}" Style="{StaticResource MenuItemImage}"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Command="cmd:MenuCommands.Delete"  x:Name="BtnMC_Delete"
+                              Header="{Binding RelativeSource={RelativeSource Self}, Path=Command.Text}">
+                            <MenuItem.Icon>
+                                <Image Source="{StaticResource BtnDel}" Style="{StaticResource MenuItemImage}" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
+            </DataGrid>
+        </Grid>
+    </Grid>
+</Window>

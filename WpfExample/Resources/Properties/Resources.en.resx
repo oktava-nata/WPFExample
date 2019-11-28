@@ -1,0 +1,768 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="txtAdd" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="txtAnswer" xml:space="preserve">
+    <value>Answer</value>
+    <comment>Модуль Инспекции: Для шаблона вопросника</comment>
+  </data>
+  <data name="txtAply" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="txtBrowser" xml:space="preserve">
+    <value>Browse...</value>
+  </data>
+  <data name="txtCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="txtClose" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="txtDelete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="txtDeselect" xml:space="preserve">
+    <value>Deselect</value>
+  </data>
+  <data name="txtEdit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="txtEnterData" xml:space="preserve">
+    <value>Please enter the data.</value>
+    <comment>Подсказка валидации</comment>
+  </data>
+  <data name="txtEnterIntData" xml:space="preserve">
+    <value>Please enter an integer.</value>
+    <comment>Подсказка валидации</comment>
+  </data>
+  <data name="txtEnterIntDataInRange" xml:space="preserve">
+    <value>Please enter an integer in the range from {0} to {1}.</value>
+    <comment>Подсказка валидации</comment>
+  </data>
+  <data name="txtEnterNotLessData" xml:space="preserve">
+    <value>Please enter not less than {0} symbols.</value>
+    <comment>Подсказка валидации</comment>
+  </data>
+  <data name="txtEnterNotMoreData" xml:space="preserve">
+    <value>Please enter not more than {0} symbols.</value>
+    <comment>Подсказка валидации</comment>
+  </data>
+  <data name="txtExpand" xml:space="preserve">
+    <value>Expand</value>
+  </data>
+  <data name="txtExportStateSended" xml:space="preserve">
+    <value>Sent</value>
+    <comment>Модуль Инспекции: состояние экспорта</comment>
+  </data>
+  <data name="txtExportStateSendReady" xml:space="preserve">
+    <value>Ready for sending</value>
+    <comment>Модуль Инспекции: состояние экспорта</comment>
+  </data>
+  <data name="txtFrom" xml:space="preserve">
+    <value>from</value>
+  </data>
+  <data name="txtLoad" xml:space="preserve">
+    <value>Load</value>
+  </data>
+  <data name="txtNeedSelectFile" xml:space="preserve">
+    <value>You must select the file!</value>
+  </data>
+  <data name="txtNo" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="txtObservation" xml:space="preserve">
+    <value>Observation</value>
+    <comment>Модуль Инспекции: Для шаблона вопросника</comment>
+  </data>
+  <data name="txtOpen" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="txtQuestion" xml:space="preserve">
+    <value>Question</value>
+    <comment>Модуль Инспекции: Для шаблона вопросника</comment>
+  </data>
+  <data name="txtSave" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="txtSelect" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="txtSelectAll" xml:space="preserve">
+    <value>Select All</value>
+  </data>
+  <data name="txtShowReport" xml:space="preserve">
+    <value>Show report</value>
+  </data>
+  <data name="txtShrink" xml:space="preserve">
+    <value>Shrink</value>
+  </data>
+  <data name="txtTo" xml:space="preserve">
+    <value>to</value>
+  </data>
+  <data name="txtView" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="txtClosed" xml:space="preserve">
+    <value>Closed</value>
+  </data>
+  <data name="txtContinue" xml:space="preserve">
+    <value>Continue</value>
+  </data>
+  <data name="txtIMO" xml:space="preserve">
+    <value>IMO#</value>
+  </data>
+  <data name="txtAll" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="txtEnterPass" xml:space="preserve">
+    <value>Please enter the password.</value>
+    <comment>Подсказка валидации</comment>
+  </data>
+  <data name="txtAnsInChapter" xml:space="preserve">
+    <value>Number of answers in the chapter</value>
+  </data>
+  <data name="txtObsInChapter" xml:space="preserve">
+    <value>Number of observations in the chapter</value>
+  </data>
+  <data name="txtQuestionsInChapter" xml:space="preserve">
+    <value>Number of questions in the chapter</value>
+  </data>
+  <data name="fStyleSettings" xml:space="preserve">
+    <value>Application style</value>
+  </data>
+  <data name="txtBig" xml:space="preserve">
+    <value>Big</value>
+  </data>
+  <data name="txtComponentSize" xml:space="preserve">
+    <value>Components size</value>
+  </data>
+  <data name="txtMedium" xml:space="preserve">
+    <value>Medium</value>
+  </data>
+  <data name="txtMenuStyleSettings" xml:space="preserve">
+    <value>Application style</value>
+  </data>
+  <data name="txtSmall" xml:space="preserve">
+    <value>Small</value>
+  </data>
+  <data name="txtShowData" xml:space="preserve">
+    <value>Show data</value>
+  </data>
+  <data name="txtEnterPassRepeat" xml:space="preserve">
+    <value>Incorrect confirmation password</value>
+  </data>
+  <data name="txtNotActive" xml:space="preserve">
+    <value>Inactive</value>
+  </data>
+  <data name="txtCopy" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="txtEnterFloatData" xml:space="preserve">
+    <value>Please enter a real number. </value>
+    <comment>Подсказка валидации</comment>
+  </data>
+  <data name="txtEnterFloatDataNonNegative" xml:space="preserve">
+    <value>Please enter a non-negative real number.   </value>
+    <comment>Подсказка валидации</comment>
+  </data>
+  <data name="txtSearch" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="txtAnswer_NA" xml:space="preserve">
+    <value>NA</value>
+    <comment>Answer Choice (IAA, IRE)</comment>
+  </data>
+  <data name="txtAnswer_NAToolTip" xml:space="preserve">
+    <value>Not applicable</value>
+    <comment>Answer Choice (IAA, IRE)</comment>
+  </data>
+  <data name="txtAnswer_No" xml:space="preserve">
+    <value>No</value>
+    <comment>Answer Choice (IAA, IRE)</comment>
+  </data>
+  <data name="txtAnswer_NS" xml:space="preserve">
+    <value>NS</value>
+    <comment>Answer Choice (IAA, IRE)</comment>
+  </data>
+  <data name="txtAnswer_NSToolTip" xml:space="preserve">
+    <value>Not seen</value>
+    <comment>Answer Choice (IAA, IRE)</comment>
+  </data>
+  <data name="txtAnswer_Yes" xml:space="preserve">
+    <value>Yes</value>
+    <comment>Answer Choice (IAA, IRE)</comment>
+  </data>
+  <data name="txtMove" xml:space="preserve">
+    <value>Move</value>
+  </data>
+  <data name="txtCompleteAgreement" xml:space="preserve">
+    <value>Complete agreement</value>
+  </data>
+  <data name="txtNotSelected" xml:space="preserve">
+    <value>Not selected</value>
+  </data>
+  <data name="mOkCoping" xml:space="preserve">
+    <value>Copying has been done</value>
+  </data>
+  <data name="mOkMoving" xml:space="preserve">
+    <value>Moving has been done</value>
+  </data>
+  <data name="txtNotSpecified" xml:space="preserve">
+    <value>Not specified</value>
+  </data>
+  <data name="mNoResultSearch" xml:space="preserve">
+    <value>Search returned no results</value>
+  </data>
+  <data name="txtOpenFile" xml:space="preserve">
+    <value>Open the file</value>
+  </data>
+  <data name="mFileSizeTooLarge" xml:space="preserve">
+    <value>The uploaded file should not be more {0} Mb.</value>
+  </data>
+  <data name="txtSelectFile" xml:space="preserve">
+    <value>Please select the file.</value>
+  </data>
+  <data name="txtNoRecords" xml:space="preserve">
+    <value>No records</value>
+  </data>
+  <data name="txtFiles" xml:space="preserve">
+    <value>Files</value>
+  </data>
+  <data name="txtClear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="txtAddAndSelect" xml:space="preserve">
+    <value>Add and select</value>
+  </data>
+  <data name="txtEnterFloatDataPositive" xml:space="preserve">
+    <value>Please enter a positive real number (number more than zero).</value>
+    <comment>Подсказка валидации</comment>
+  </data>
+  <data name="txtDownloadFile" xml:space="preserve">
+    <value>Download file</value>
+  </data>
+  <data name="mFileDownloadOk" xml:space="preserve">
+    <value>The file has been successfully saved: "{0}".</value>
+  </data>
+  <data name="txtGoLast" xml:space="preserve">
+    <value>&lt; Last</value>
+  </data>
+  <data name="txtGoNext" xml:space="preserve">
+    <value>Next &gt;</value>
+  </data>
+  <data name="txtReady" xml:space="preserve">
+    <value>Ready</value>
+  </data>
+  <data name="txtNA" xml:space="preserve">
+    <value>NA</value>
+  </data>
+  <data name="txtEnterNotLessValue" xml:space="preserve">
+    <value>Please enter a value not less than {0}.</value>
+    <comment>Подсказка валидации</comment>
+  </data>
+  <data name="mActionNotAvailable" xml:space="preserve">
+    <value>This action is not available. Check the system date on your computer.</value>
+  </data>
+  <data name="txtMonth" xml:space="preserve">
+    <value>Month</value>
+  </data>
+  <data name="txtToday" xml:space="preserve">
+    <value>Today</value>
+  </data>
+  <data name="txtWeek" xml:space="preserve">
+    <value>Week</value>
+  </data>
+  <data name="txtApr" xml:space="preserve">
+    <value>April</value>
+    <comment>Month</comment>
+  </data>
+  <data name="txtAug" xml:space="preserve">
+    <value>August</value>
+    <comment>Month</comment>
+  </data>
+  <data name="txtDec" xml:space="preserve">
+    <value>December</value>
+    <comment>Month</comment>
+  </data>
+  <data name="txtFeb" xml:space="preserve">
+    <value>February</value>
+    <comment>Month</comment>
+  </data>
+  <data name="txtJan" xml:space="preserve">
+    <value>January</value>
+    <comment>Month</comment>
+  </data>
+  <data name="txtJul" xml:space="preserve">
+    <value>July</value>
+    <comment>Month</comment>
+  </data>
+  <data name="txtJun" xml:space="preserve">
+    <value>June</value>
+    <comment>Month</comment>
+  </data>
+  <data name="txtMar" xml:space="preserve">
+    <value>March</value>
+    <comment>Month</comment>
+  </data>
+  <data name="txtMay" xml:space="preserve">
+    <value>May</value>
+    <comment>Month</comment>
+  </data>
+  <data name="txtNov" xml:space="preserve">
+    <value>November</value>
+    <comment>Month</comment>
+  </data>
+  <data name="txtOct" xml:space="preserve">
+    <value>October</value>
+    <comment>Month</comment>
+  </data>
+  <data name="txtSep" xml:space="preserve">
+    <value>September</value>
+    <comment>Month</comment>
+  </data>
+  <data name="txtForViewingDataSelectRecord" xml:space="preserve">
+    <value>To view data, select the record.</value>
+  </data>
+  <data name="txtDetailedInformation" xml:space="preserve">
+    <value>detailed information</value>
+  </data>
+  <data name="txtDownloadPackage" xml:space="preserve">
+    <value>Download package</value>
+  </data>
+  <data name="mFileNotLoaded" xml:space="preserve">
+    <value>File is not loaded!</value>
+  </data>
+  <data name="txtCreated" xml:space="preserve">
+    <value>Created:</value>
+  </data>
+  <data name="txtUndefined" xml:space="preserve">
+    <value>Undefined</value>
+  </data>
+  <data name="txtFirstPage" xml:space="preserve">
+    <value>First page</value>
+    <comment>навигация</comment>
+  </data>
+  <data name="txtLastPage" xml:space="preserve">
+    <value>Last page</value>
+    <comment>навигация</comment>
+  </data>
+  <data name="txtNextPage" xml:space="preserve">
+    <value>Next page</value>
+    <comment>навигация</comment>
+  </data>
+  <data name="txtPrevPage" xml:space="preserve">
+    <value>Previous page</value>
+    <comment>навигация</comment>
+  </data>
+  <data name="txtFile" xml:space="preserve">
+    <value>File</value>
+    <comment>File</comment>
+  </data>
+  <data name="txtFileDescription" xml:space="preserve">
+    <value>Description</value>
+    <comment>File</comment>
+  </data>
+  <data name="txtFileName" xml:space="preserve">
+    <value>File name</value>
+    <comment>File</comment>
+  </data>
+  <data name="txtFileSize" xml:space="preserve">
+    <value>File size</value>
+    <comment>File</comment>
+  </data>
+  <data name="txtFileFormat" xml:space="preserve">
+    <value>File format</value>
+  </data>
+  <data name="txtPeriod" xml:space="preserve">
+    <value>Period</value>
+  </data>
+  <data name="txtCrew" xml:space="preserve">
+    <value>Crew</value>
+  </data>
+  <data name="txtDateFrom" xml:space="preserve">
+    <value>Date from</value>
+  </data>
+  <data name="txtDateTo" xml:space="preserve">
+    <value>Date to</value>
+  </data>
+  <data name="txtName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="txtAprilM" xml:space="preserve">
+    <value>April</value>
+    <comment>Month (Именительный падеж)</comment>
+  </data>
+  <data name="txtAugustM" xml:space="preserve">
+    <value>August</value>
+    <comment>Month (Именительный падеж)</comment>
+  </data>
+  <data name="txtDecemberM" xml:space="preserve">
+    <value>December</value>
+    <comment>Month (Именительный падеж)</comment>
+  </data>
+  <data name="txtFebruaryM" xml:space="preserve">
+    <value>February</value>
+    <comment>Month (Именительный падеж)</comment>
+  </data>
+  <data name="txtJanuaryM" xml:space="preserve">
+    <value>January</value>
+    <comment>Month (Именительный падеж)</comment>
+  </data>
+  <data name="txtJulyM" xml:space="preserve">
+    <value>July</value>
+    <comment>Month (Именительный падеж)</comment>
+  </data>
+  <data name="txtJuneM" xml:space="preserve">
+    <value>June</value>
+    <comment>Month (Именительный падеж)</comment>
+  </data>
+  <data name="txtMarchM" xml:space="preserve">
+    <value>March</value>
+    <comment>Month (Именительный падеж)</comment>
+  </data>
+  <data name="txtMayM" xml:space="preserve">
+    <value>May</value>
+    <comment>Month (Именительный падеж)</comment>
+  </data>
+  <data name="txtNovemberM" xml:space="preserve">
+    <value>November</value>
+    <comment>Month (Именительный падеж)</comment>
+  </data>
+  <data name="txtOctoberM" xml:space="preserve">
+    <value>October</value>
+    <comment>Month (Именительный падеж)</comment>
+  </data>
+  <data name="txtSeptemberM" xml:space="preserve">
+    <value>September</value>
+    <comment>Month (Именительный падеж)</comment>
+  </data>
+  <data name="txtFri" xml:space="preserve">
+    <value>Fri</value>
+    <comment>Дни недели</comment>
+  </data>
+  <data name="txtMon" xml:space="preserve">
+    <value>Mon</value>
+    <comment>Дни недели</comment>
+  </data>
+  <data name="txtSat" xml:space="preserve">
+    <value>Sat</value>
+    <comment>Дни недели</comment>
+  </data>
+  <data name="txtSun" xml:space="preserve">
+    <value>Sun</value>
+    <comment>Дни недели</comment>
+  </data>
+  <data name="txtThurs" xml:space="preserve">
+    <value>Thurs</value>
+    <comment>Дни недели</comment>
+  </data>
+  <data name="txtTues" xml:space="preserve">
+    <value>Tues</value>
+    <comment>Дни недели</comment>
+  </data>
+  <data name="txtWed" xml:space="preserve">
+    <value>Wed</value>
+    <comment>Дни недели</comment>
+  </data>
+  <data name="txtCalendar" xml:space="preserve">
+    <value>Calendar</value>
+  </data>
+  <data name="txtForViewingDataSelectDay" xml:space="preserve">
+    <value>To view data, select day in the calendar.</value>
+    <comment>Calendar</comment>
+  </data>
+  <data name="txtFiltration" xml:space="preserve">
+    <value>Filtration</value>
+  </data>
+  <data name="txtDate" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="txtHours" xml:space="preserve">
+    <value>Hours</value>
+  </data>
+  <data name="txtFlag" xml:space="preserve">
+    <value>Flag</value>
+  </data>
+  <data name="txtCompany" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="txtEnterMoreValue" xml:space="preserve">
+    <value>Please enter a value more than {0}.</value>
+    <comment>Подсказка валидации</comment>
+  </data>
+  <data name="txtConstructorModeIsOn" xml:space="preserve">
+    <value>Constructor mode is on</value>
+  </data>
+  <data name="txtTurnOffConstructorMode" xml:space="preserve">
+    <value>Turn off constructor mode</value>
+  </data>
+  <data name="txtTurnOnConstructorMode" xml:space="preserve">
+    <value>Turn on constructor mode</value>
+  </data>
+  <data name="txtAddAll" xml:space="preserve">
+    <value>Add all</value>
+  </data>
+  <data name="txtItemID" xml:space="preserve">
+    <value>ID#</value>
+  </data>
+  <data name="mErIncorrectInputDatePeriod" xml:space="preserve">
+    <value>Incorrect period input!</value>
+  </data>
+  <data name="txtLoadingData" xml:space="preserve">
+    <value>Loading data</value>
+  </data>
+  <data name="mSendLogFileToSupport" xml:space="preserve">
+    <value>Please, send a log file to technical support ({0}).</value>
+  </data>
+  <data name="txtSortNumber" xml:space="preserve">
+    <value>№</value>
+  </data>
+  <data name="txtSortNumberText" xml:space="preserve">
+    <value>№ (for sorting)</value>
+  </data>
+  <data name="txtMoveToHistory" xml:space="preserve">
+    <value>Move to history</value>
+  </data>
+  <data name="txtShowPrintedForm" xml:space="preserve">
+    <value>Show printed form</value>
+  </data>
+  <data name="txtOpenFormPrinting" xml:space="preserve">
+    <value>Open the form for printing</value>
+  </data>
+  <data name="txtOpenFolder" xml:space="preserve">
+    <value>Open folder</value>
+  </data>
+  <data name="txtYes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="txtRefresh" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="txtMarkAsNotWatched" xml:space="preserve">
+    <value>Mark as Not seen</value>
+    <comment>2.1.8</comment>
+  </data>
+  <data name="txtOpenFormPrintingForSupplier" xml:space="preserve">
+    <value>Open printing form for supplier</value>
+  </data>
+  <data name="txtNaN" xml:space="preserve">
+    <value>-</value>
+    <comment>2.1.8</comment>
+  </data>
+  <data name="txtFilesNumber" xml:space="preserve">
+    <value>Number of files</value>
+    <comment>File</comment>
+  </data>
+  <data name="txtNotWatched" xml:space="preserve">
+    <value>Not seen</value>
+    <comment>2.1.8</comment>
+  </data>
+  <data name="txtVesselInfo" xml:space="preserve">
+    <value>Information about the vessel</value>
+    <comment>MRV (Не используется в Автономной компании)</comment>
+  </data>
+  <data name="txtSelectOrEnterNew" xml:space="preserve">
+    <value>Select from the list or enter a new value</value>
+  </data>
+  <data name="txtStartTyping" xml:space="preserve">
+    <value>Start typing...</value>
+  </data>
+  <data name="txtEditableCellTooltip" xml:space="preserve">
+    <value>To edit the data, double click on the cell</value>
+    <comment>3.0.8</comment>
+  </data>
+  <data name="txtExportDate" xml:space="preserve">
+    <value>Export Date</value>
+    <comment>3.0.8</comment>
+  </data>
+  <data name="txtDisplayData" xml:space="preserve">
+    <value>Display report data</value>
+    <comment>HSEQ 4.0.0</comment>
+  </data>
+  <data name="txtCreatedByCompanyInfo" xml:space="preserve">
+    <value>Created by company</value>
+    <comment>подсказка к рисунку</comment>
+  </data>
+  <data name="txtAdditionalInfo" xml:space="preserve">
+    <value>Additional information</value>
+    <comment>4.0.3</comment>
+  </data>
+  <data name="txtPort" xml:space="preserve">
+    <value>Port</value>
+    <comment>4.0.3</comment>
+  </data>
+  <data name="txtNomination" xml:space="preserve">
+    <value>Name (ru)</value>
+    <comment>4.0.3</comment>
+  </data>
+  <data name="txtNominationEng" xml:space="preserve">
+    <value>Name (en)</value>
+    <comment>4.0.3</comment>
+  </data>
+  <data name="txtNotify" xml:space="preserve">
+    <value>Notify for (days)</value>
+    <comment>4.0.3</comment>
+  </data>
+  <data name="txtSection" xml:space="preserve">
+    <value>Section</value>
+    <comment>4.0.3</comment>
+  </data>
+  <data name="txtFirstnameEN" xml:space="preserve">
+    <value>First name (en)</value>
+    <comment>4.0.3</comment>
+  </data>
+  <data name="txtFirstnameRU" xml:space="preserve">
+    <value>First name (ru)</value>
+    <comment>4.0.3</comment>
+  </data>
+  <data name="txtPatronymicEN" xml:space="preserve">
+    <value>Patronymic (en)</value>
+    <comment>4.0.3</comment>
+  </data>
+  <data name="txtPatronymicRU" xml:space="preserve">
+    <value>Patronymic (ru)</value>
+    <comment>4.0.3</comment>
+  </data>
+  <data name="txtSurnameEN" xml:space="preserve">
+    <value>Surname (en)</value>
+    <comment>4.0.3</comment>
+  </data>
+  <data name="txtSurnameRU" xml:space="preserve">
+    <value>Surname (ru)</value>
+    <comment>4.0.3</comment>
+  </data>
+  <data name="txtNoData" xml:space="preserve">
+    <value>No data</value>
+  </data>
+  <data name="txtReset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="txtShipowner" xml:space="preserve">
+    <value>Shipowner</value>
+    <comment>BUDGET</comment>
+  </data>
+  <data name="txtWaiting" xml:space="preserve">
+    <value>Waiting...</value>
+  </data>
+  <data name="txtCopyInProgress" xml:space="preserve">
+    <value>Coping...</value>
+  </data>
+</root>

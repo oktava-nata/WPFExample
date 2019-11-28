@@ -1,0 +1,805 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="fDirectories" xml:space="preserve">
+    <value>Information books</value>
+  </data>
+  <data name="mConfirmDelResponsible" xml:space="preserve">
+    <value>Are you sure you want to delete the responsible person?</value>
+    <comment>Inspections</comment>
+  </data>
+  <data name="mResponsibleHasObservations" xml:space="preserve">
+    <value>It is impossible to delete the responsible person as he is answering for some observations!</value>
+  </data>
+  <data name="rAnswer" xml:space="preserve">
+    <value>Answer</value>
+  </data>
+  <data name="rAudit" xml:space="preserve">
+    <value>Audit</value>
+  </data>
+  <data name="rComments" xml:space="preserve">
+    <value>Comments</value>
+  </data>
+  <data name="rDateDDMMYYYY" xml:space="preserve">
+    <value>Date (dd/mm/yyyy)</value>
+  </data>
+  <data name="rDepartment" xml:space="preserve">
+    <value>Department</value>
+  </data>
+  <data name="rImoVinReg" xml:space="preserve">
+    <value>IMO/VIN</value>
+  </data>
+  <data name="rInspection" xml:space="preserve">
+    <value>Inspection</value>
+  </data>
+  <data name="rInspector" xml:space="preserve">
+    <value>Inspector</value>
+  </data>
+  <data name="rInternalAuditReport" xml:space="preserve">
+    <value>Company Audit Report</value>
+  </data>
+  <data name="rMaster" xml:space="preserve">
+    <value>Master</value>
+  </data>
+  <data name="rObservation" xml:space="preserve">
+    <value>Observation</value>
+  </data>
+  <data name="rObservationList" xml:space="preserve">
+    <value>List of observations</value>
+  </data>
+  <data name="rObsListComment" xml:space="preserve">
+    <value>The observations recorded below should not be considered as a comprehensive list.</value>
+  </data>
+  <data name="rObsListCommentM" xml:space="preserve">
+    <value>The above mentioned observations  have been discussed and agreed with the master.</value>
+  </data>
+  <data name="rObsListCommentRP" xml:space="preserve">
+    <value>The above mentioned observations  have been discussed and agreed with the responsible person.</value>
+  </data>
+  <data name="rPlaceOfAudit" xml:space="preserve">
+    <value>Place of Audit</value>
+  </data>
+  <data name="rPort" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="rQuestion" xml:space="preserve">
+    <value>Question</value>
+  </data>
+  <data name="rResponsiblePerson" xml:space="preserve">
+    <value>Responsible person</value>
+  </data>
+  <data name="rShipInspectionReport" xml:space="preserve">
+    <value>Ship Inspection Report</value>
+  </data>
+  <data name="rSignature" xml:space="preserve">
+    <value>Signature</value>
+  </data>
+  <data name="rVesselName" xml:space="preserve">
+    <value>Vessel Name</value>
+  </data>
+  <data name="txtLastDateRefresh" xml:space="preserve">
+    <value>Refresh date:</value>
+  </data>
+  <data name="txtRefresh" xml:space="preserve">
+    <value>Refresh all data</value>
+  </data>
+  <data name="txtResponsible" xml:space="preserve">
+    <value>Responsible person</value>
+  </data>
+  <data name="txtResponsibleData" xml:space="preserve">
+    <value>Responsible person’s data</value>
+  </data>
+  <data name="txtResponsibleFIO" xml:space="preserve">
+    <value>Responsible person’s name</value>
+  </data>
+  <data name="txtResponsiblePost" xml:space="preserve">
+    <value>Rank</value>
+  </data>
+  <data name="txtResponsibles" xml:space="preserve">
+    <value>Responsible persons</value>
+  </data>
+  <data name="rMatrixAreal" xml:space="preserve">
+    <value>Rank, vessels' type and inland trading area, expire date</value>
+  </data>
+  <data name="rMatrixDiplom" xml:space="preserve">
+    <value>License type (STCW), expire date</value>
+  </data>
+  <data name="rMatrixRank" xml:space="preserve">
+    <value>Rank</value>
+  </data>
+  <data name="rMatrixSertification" xml:space="preserve">
+    <value>Tanker certification / Firefighting training</value>
+  </data>
+  <data name="rMatrixYearsInRank" xml:space="preserve">
+    <value>Years in rank</value>
+  </data>
+  <data name="rMatrixYearsOperator" xml:space="preserve">
+    <value>Years with current Operator</value>
+  </data>
+  <data name="rNaWithoutComm" xml:space="preserve">
+    <value>Key questions marked NA without comments</value>
+  </data>
+  <data name="rNsWithoutComm" xml:space="preserve">
+    <value>Key questions marked NS without comments and observations</value>
+  </data>
+  <data name="rQuestionnaireRepInfo" xml:space="preserve">
+    <value>This report is based on the latest edition of "{0}"and can be used in "{1}" only.</value>
+  </data>
+  <data name="rQuestionsWithoutAns" xml:space="preserve">
+    <value>Questions without answer</value>
+  </data>
+  <data name="rSection" xml:space="preserve">
+    <value>Section {0}</value>
+  </data>
+  <data name="rYesWithoutComm" xml:space="preserve">
+    <value>Key questions marked YES without comments</value>
+  </data>
+  <data name="rBPI" xml:space="preserve">
+    <value>Best Practice</value>
+  </data>
+  <data name="rByCompany" xml:space="preserve">
+    <value>By Company</value>
+  </data>
+  <data name="rByVessel" xml:space="preserve">
+    <value>By Vessel</value>
+  </data>
+  <data name="rClosedDate" xml:space="preserve">
+    <value>Closure date</value>
+  </data>
+  <data name="rClosedTillDate" xml:space="preserve">
+    <value>Close until</value>
+  </data>
+  <data name="rCorrectiveActions" xml:space="preserve">
+    <value>Corrective Actions</value>
+  </data>
+  <data name="rFactDate" xml:space="preserve">
+    <value>Actual date</value>
+  </data>
+  <data name="rInspectionReport" xml:space="preserve">
+    <value>Inspection report</value>
+  </data>
+  <data name="rObservationType" xml:space="preserve">
+    <value>Type of observation</value>
+  </data>
+  <data name="rPIC" xml:space="preserve">
+    <value>Person in charge</value>
+  </data>
+  <data name="rPlanDate" xml:space="preserve">
+    <value>Scheduled date</value>
+  </data>
+  <data name="rPreventiveActions" xml:space="preserve">
+    <value>Preventive Actions</value>
+  </data>
+  <data name="rQuestionnaire" xml:space="preserve">
+    <value>Questionnaire</value>
+  </data>
+  <data name="rRemark" xml:space="preserve">
+    <value>Remark</value>
+  </data>
+  <data name="rResponsibleCompany" xml:space="preserve">
+    <value>Responsible person (Company)</value>
+  </data>
+  <data name="rResponsibleVessel" xml:space="preserve">
+    <value>Responsible person (Vessel)</value>
+  </data>
+  <data name="rResult" xml:space="preserve">
+    <value>Result</value>
+  </data>
+  <data name="rRiskLevel" xml:space="preserve">
+    <value>Risk level</value>
+  </data>
+  <data name="rRootCause" xml:space="preserve">
+    <value>Root Cause</value>
+  </data>
+  <data name="rDate" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="rInspectionsHistory" xml:space="preserve">
+    <value>Inspections history</value>
+  </data>
+  <data name="rInspectorObservations" xml:space="preserve">
+    <value>Inspector’s Observations</value>
+  </data>
+  <data name="rOperator" xml:space="preserve">
+    <value>Operator’s Name</value>
+  </data>
+  <data name="rOperComments" xml:space="preserve">
+    <value>Operator’s comments</value>
+  </data>
+  <data name="rPeriod" xml:space="preserve">
+    <value>Period</value>
+  </data>
+  <data name="rComparisonOfInspectionResults" xml:space="preserve">
+    <value>Comparison of inspection results</value>
+  </data>
+  <data name="rOutstandingInspections" xml:space="preserve">
+    <value>Outstanding inspections</value>
+  </data>
+  <data name="rRequireAttentionInspections" xml:space="preserve">
+    <value>Inspections requiring attention</value>
+  </data>
+  <data name="rScheduledInspections" xml:space="preserve">
+    <value>Scheduled inspections</value>
+  </data>
+  <data name="rConfirmation" xml:space="preserve">
+    <value>Confirmation (signature)</value>
+  </data>
+  <data name="rCopiesReport" xml:space="preserve">
+    <value>Copies of the report were given to</value>
+  </data>
+  <data name="rObsAndCorrActions" xml:space="preserve">
+    <value>The observations and corrective actions</value>
+  </data>
+  <data name="rResponsible" xml:space="preserve">
+    <value>Responsible</value>
+  </data>
+  <data name="txtPass" xml:space="preserve">
+    <value>Password</value>
+    <comment>user</comment>
+  </data>
+  <data name="txtPassRepeat" xml:space="preserve">
+    <value>Confirm password</value>
+    <comment>user</comment>
+  </data>
+  <data name="txtRoleAdmin" xml:space="preserve">
+    <value>Administrator</value>
+    <comment>user</comment>
+  </data>
+  <data name="txtRoleCompInsManager" xml:space="preserve">
+    <value>Manager of company inspections </value>
+    <comment>user</comment>
+  </data>
+  <data name="txtRoleFlotInsManager" xml:space="preserve">
+    <value>Manager of fleet inspections</value>
+    <comment>user</comment>
+  </data>
+  <data name="txtRoleInspector" xml:space="preserve">
+    <value>Inspector</value>
+    <comment>user</comment>
+  </data>
+  <data name="txtUserLogin" xml:space="preserve">
+    <value>Login</value>
+    <comment>user</comment>
+  </data>
+  <data name="txtUserManagement" xml:space="preserve">
+    <value>System users</value>
+    <comment>user</comment>
+  </data>
+  <data name="txtUserName" xml:space="preserve">
+    <value>User name</value>
+    <comment>user</comment>
+  </data>
+  <data name="fAuthorization" xml:space="preserve">
+    <value>Authorization</value>
+    <comment>user</comment>
+  </data>
+  <data name="fUser" xml:space="preserve">
+    <value>User</value>
+    <comment>user</comment>
+  </data>
+  <data name="txtEnter" xml:space="preserve">
+    <value>Login</value>
+    <comment>user</comment>
+  </data>
+  <data name="txtManagementOfInspectors" xml:space="preserve">
+    <value>Management of inspectors</value>
+    <comment>user</comment>
+  </data>
+  <data name="txtRoleAdminInfo" xml:space="preserve">
+    <value>Management of directories
+User Management
+Loading data from 1C</value>
+    <comment>user</comment>
+  </data>
+  <data name="txtRoleCompInsManagerInfo" xml:space="preserve">
+    <value>Management of company inspections</value>
+    <comment>user</comment>
+  </data>
+  <data name="txtRoleFlotInsManagerInfo" xml:space="preserve">
+    <value>Management of fleet inspections</value>
+    <comment>user</comment>
+  </data>
+  <data name="txtRoleInspectorInfo" xml:space="preserve">
+    <value>Management of own inspections</value>
+    <comment>user</comment>
+  </data>
+  <data name="mErInvalidLogOrPsw" xml:space="preserve">
+    <value>Invalid login or password!</value>
+  </data>
+  <data name="txtEditPersonalData" xml:space="preserve">
+    <value>Edit personal data</value>
+    <comment>user</comment>
+  </data>
+  <data name="txtEmail" xml:space="preserve">
+    <value>e-mail</value>
+    <comment>user</comment>
+  </data>
+  <data name="txtInspectorData" xml:space="preserve">
+    <value>Inspector’s data</value>
+    <comment>user</comment>
+  </data>
+  <data name="txtInspectorFIO" xml:space="preserve">
+    <value>Inspector’s name</value>
+    <comment>user</comment>
+  </data>
+  <data name="txtInspectorInfo" xml:space="preserve">
+    <value>Additional information</value>
+    <comment>user</comment>
+  </data>
+  <data name="txtInspectorNum" xml:space="preserve">
+    <value>Inspector ID</value>
+    <comment>user</comment>
+  </data>
+  <data name="txtLogOut" xml:space="preserve">
+    <value>Log out</value>
+    <comment>user</comment>
+  </data>
+  <data name="txtTel" xml:space="preserve">
+    <value>Telephone</value>
+    <comment>user</comment>
+  </data>
+  <data name="rObsCount" xml:space="preserve">
+    <value>Number of observations</value>
+  </data>
+  <data name="rTotal" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="txtSavePass" xml:space="preserve">
+    <value>Save password</value>
+    <comment>user</comment>
+  </data>
+  <data name="mErNotUniqueLogin" xml:space="preserve">
+    <value>User with this login already exists! Enter the unique login!</value>
+  </data>
+  <data name="rAvgObsInInspection" xml:space="preserve">
+    <value>Average number of observations</value>
+  </data>
+  <data name="rAvgObsTitle" xml:space="preserve">
+    <value>Average number of fleet observations</value>
+  </data>
+  <data name="rChapter" xml:space="preserve">
+    <value>Chapter</value>
+  </data>
+  <data name="rClosedObsCount" xml:space="preserve">
+    <value>Number of closed observations</value>
+  </data>
+  <data name="rInspectionCount" xml:space="preserve">
+    <value>Number of inspections</value>
+  </data>
+  <data name="mConfirmDelUser" xml:space="preserve">
+    <value>Are you sure you want to delete the user?</value>
+  </data>
+  <data name="rObsToCompany" xml:space="preserve">
+    <value>Observations to company</value>
+    <comment>r</comment>
+  </data>
+  <data name="rObsToCrew" xml:space="preserve">
+    <value>Observations to crew</value>
+    <comment>r</comment>
+  </data>
+  <data name="rStatus" xml:space="preserve">
+    <value>Status</value>
+    <comment>r</comment>
+  </data>
+  <data name="rPersentClosedObs" xml:space="preserve">
+    <value>The percentage of closed observations</value>
+    <comment>r</comment>
+  </data>
+  <data name="rTotalObs" xml:space="preserve">
+    <value>Total observations</value>
+    <comment>r</comment>
+  </data>
+  <data name="rTotalObsClosed" xml:space="preserve">
+    <value>Total closed observations</value>
+    <comment>r</comment>
+  </data>
+  <data name="rCompany" xml:space="preserve">
+    <value>Company</value>
+    <comment>r</comment>
+  </data>
+  <data name="rFleet" xml:space="preserve">
+    <value>Fleet</value>
+    <comment>r</comment>
+  </data>
+  <data name="rTypeNotSpecified" xml:space="preserve">
+    <value>Type not specified</value>
+    <comment>r</comment>
+  </data>
+  <data name="txtNotLoggedIn" xml:space="preserve">
+    <value>Not logged in</value>
+    <comment>user</comment>
+  </data>
+  <data name="rChapterNotSpecified" xml:space="preserve">
+    <value>Chapter not specified</value>
+    <comment>r</comment>
+  </data>
+  <data name="rPICNotSpecified" xml:space="preserve">
+    <value>Person in charge not specified</value>
+    <comment>r</comment>
+  </data>
+  <data name="mPageLayoutEr" xml:space="preserve">
+    <value>Mode "Page Layout" is not available. To preview, use the Export to PDF.</value>
+  </data>
+  <data name="rInspectionReportLukoil" xml:space="preserve">
+    <value>Inspection Report</value>
+    <comment>r</comment>
+  </data>
+  <data name="txtRolePMSShipCatalogueManagerInfo" xml:space="preserve">
+    <value>Creating, editing of objects, jobs, spare parts, etc.</value>
+    <comment>user PMS</comment>
+  </data>
+  <data name="txtRolePMSTemplatesManager" xml:space="preserve">
+    <value>Manager of Template editor</value>
+    <comment>user PMS</comment>
+  </data>
+  <data name="txtRolePMSTemplatesManagerInfo" xml:space="preserve">
+    <value>Creating, editing of templates</value>
+    <comment>user PMS</comment>
+  </data>
+  <data name="txtAccessAllPartitions" xml:space="preserve">
+    <value>Accessible all partitions</value>
+    <comment>user PMS</comment>
+  </data>
+  <data name="txtAccessSomePartitions" xml:space="preserve">
+    <value>Accessible some partitions</value>
+    <comment>user PMS</comment>
+  </data>
+  <data name="txtAccessToPartitions" xml:space="preserve">
+    <value>Access to partitions</value>
+    <comment>user PMS</comment>
+  </data>
+  <data name="txtPerson" xml:space="preserve">
+    <value>Person</value>
+    <comment>user PMS</comment>
+  </data>
+  <data name="txtFrom" xml:space="preserve">
+    <value>from</value>
+  </data>
+  <data name="txtNumRecordsPerPage" xml:space="preserve">
+    <value>Records per page:</value>
+  </data>
+  <data name="txtPage" xml:space="preserve">
+    <value>Page</value>
+  </data>
+  <data name="txtTotalRecords" xml:space="preserve">
+    <value>Total records:</value>
+  </data>
+  <data name="rCritical" xml:space="preserve">
+    <value>CRITICAL</value>
+  </data>
+  <data name="rJobDescription" xml:space="preserve">
+    <value>Job description</value>
+  </data>
+  <data name="rJobInstructionRef" xml:space="preserve">
+    <value>Reference to the instructions</value>
+  </data>
+  <data name="rJobPlanning" xml:space="preserve">
+    <value>Plan of jobs</value>
+  </data>
+  <data name="rNoRecords" xml:space="preserve">
+    <value>No records</value>
+  </data>
+  <data name="rObject" xml:space="preserve">
+    <value>Object</value>
+  </data>
+  <data name="txtAdditionalProperties" xml:space="preserve">
+    <value>Additional information</value>
+    <comment>VesselTypeForm</comment>
+  </data>
+  <data name="txtAdditionalProperty" xml:space="preserve">
+    <value>Additional property</value>
+    <comment>VesselTypeForm</comment>
+  </data>
+  <data name="txtAdditionalPropertyData" xml:space="preserve">
+    <value>Additional property data</value>
+    <comment>VesselTypeForm</comment>
+  </data>
+  <data name="txtAdditionalPropertyDescription" xml:space="preserve">
+    <value>Description</value>
+    <comment>VesselTypeForm</comment>
+  </data>
+  <data name="txtAdditionalPropertyName" xml:space="preserve">
+    <value>Property name</value>
+    <comment>VesselTypeForm</comment>
+  </data>
+  <data name="txtIssueDate" xml:space="preserve">
+    <value>Delivery date</value>
+  </data>
+  <data name="mConfirmDelShipProperty" xml:space="preserve">
+    <value>Are you sure you want to delete the property?</value>
+    <comment>VesselProperty</comment>
+  </data>
+  <data name="mConfirmDelFile" xml:space="preserve">
+    <value>Are you sure you want to delete the file?</value>
+    <comment>file</comment>
+  </data>
+  <data name="txtRoleCrewHoursAdminInfo" xml:space="preserve">
+    <value>User Management</value>
+    <comment>user CrewHours</comment>
+  </data>
+  <data name="txtRoleAdminInfo_IAA" xml:space="preserve">
+    <value>Uploading questionnaires</value>
+    <comment>user IAA</comment>
+  </data>
+  <data name="txtCreatedByCompany" xml:space="preserve">
+    <value>Created by company:</value>
+  </data>
+  <data name="txtEditedByCompany" xml:space="preserve">
+    <value>Edited by company:</value>
+  </data>
+  <data name="txtLastExport" xml:space="preserve">
+    <value>Last export:</value>
+  </data>
+  <data name="txtLastImport" xml:space="preserve">
+    <value>Last import:</value>
+  </data>
+  <data name="txtModifyInfo" xml:space="preserve">
+    <value>Information about modifications</value>
+  </data>
+  <data name="txtPackageNumber" xml:space="preserve">
+    <value>Package number</value>
+  </data>
+  <data name="txtShowChangeInfo" xml:space="preserve">
+    <value>Show information about the changes of record</value>
+  </data>
+  <data name="txtUnitH" xml:space="preserve">
+    <value>h.</value>
+    <comment>UnitListPanel</comment>
+  </data>
+  <data name="txtUnitM" xml:space="preserve">
+    <value>m.</value>
+    <comment>UnitListPanel</comment>
+  </data>
+  <data name="txtUnitS" xml:space="preserve">
+    <value>s.</value>
+    <comment>UnitListPanel</comment>
+  </data>
+  <data name="txtD" xml:space="preserve">
+    <value>d.</value>
+  </data>
+  <data name="txtM" xml:space="preserve">
+    <value>m.</value>
+  </data>
+  <data name="txtY" xml:space="preserve">
+    <value>y.</value>
+  </data>
+  <data name="txtUsersSystem" xml:space="preserve">
+    <value>System users</value>
+  </data>
+  <data name="mConfirmDel" xml:space="preserve">
+    <value>Are you sure you want to delete?</value>
+  </data>
+  <data name="txtRefBookName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="txtSelectedOf" xml:space="preserve">
+    <value>Selected {0} of {1}</value>
+  </data>
+  <data name="txtPrefixRequistion" xml:space="preserve">
+    <value>Prefix for requisitions</value>
+    <comment>2.1.8</comment>
+  </data>
+  <data name="txtPrefixRequistionDescription" xml:space="preserve">
+    <value>Prefix is used to form number of requisition created by the ship. Symbols like "–" or "/" can be used in the prefix. As an example, if prefix "C-" stated, the number of requisition will be "C-253/2016-05-25".</value>
+    <comment>2.1.8</comment>
+  </data>
+  <data name="txtEnterComplexNumberValueNotLess" xml:space="preserve">
+    <value>Please enter data not less than {0}.</value>
+    <comment>UnitListPanel Подсказка валидации</comment>
+  </data>
+  <data name="txtEnterComplexNumberValueNotMore" xml:space="preserve">
+    <value>Please enter data not more than {0}.</value>
+    <comment>UnitListPanel Подсказка валидации</comment>
+  </data>
+  <data name="txtEnterComplexNumberValueNotZero" xml:space="preserve">
+    <value>Please enter data other than zero.</value>
+    <comment>UnitListPanel Подсказка валидации</comment>
+  </data>
+  <data name="txtUnitD" xml:space="preserve">
+    <value>d.</value>
+    <comment>MRV</comment>
+  </data>
+  <data name="txtUnitOfCargo" xml:space="preserve">
+    <value>Unit of cargo</value>
+    <comment>MRV</comment>
+  </data>
+  <data name="unit_of_cargo_m3" xml:space="preserve">
+    <value>m3</value>
+    <comment>MRV</comment>
+  </data>
+  <data name="unit_of_cargo_Passengers" xml:space="preserve">
+    <value>Passengers</value>
+    <comment>MRV</comment>
+  </data>
+  <data name="unit_of_cargo_t" xml:space="preserve">
+    <value>t</value>
+    <comment>MRV</comment>
+  </data>
+  <data name="unit_of_cargo_t_DWT" xml:space="preserve">
+    <value>t-DWT</value>
+    <comment>MRV</comment>
+  </data>
+  <data name="txtFuelTypeDictionaryIsEmpty" xml:space="preserve">
+    <value>It is necessary to fill "Types of fuel" dictionary</value>
+    <comment>MRV</comment>
+  </data>
+  <data name="txtFuelTypeEmissionFactor" xml:space="preserve">
+    <value>Emission factor
+(t. CO2/ t. fuel)</value>
+    <comment>MRV</comment>
+  </data>
+  <data name="txtFuelTypeIsUseOnShip" xml:space="preserve">
+    <value>Select the types of fuel that are used on board</value>
+    <comment>MRV</comment>
+  </data>
+  <data name="txtFuelTypeIsUseOnShipView" xml:space="preserve">
+    <value>Types of fuel used on board</value>
+    <comment>MRV</comment>
+  </data>
+  <data name="txtFuelTypeName" xml:space="preserve">
+    <value>Type of fuel</value>
+    <comment>MRV</comment>
+  </data>
+  <data name="txtFuelTypeShortName" xml:space="preserve">
+    <value>Short name</value>
+    <comment>MRV</comment>
+  </data>
+  <data name="txtShipFuelTypeListIsEmpty" xml:space="preserve">
+    <value>No type of fuel was selected for the vessel</value>
+    <comment>MRV</comment>
+  </data>
+  <data name="txtUnitOfCargoTextForUser" xml:space="preserve">
+    <value>Attention! The unit of cargo will be changed for all voyages for this vessel</value>
+    <comment>MRV</comment>
+  </data>
+  <data name="txtMainVesselData" xml:space="preserve">
+    <value>Basic information about the ship</value>
+    <comment>4.0.2</comment>
+  </data>
+  <data name="txtRoleEI" xml:space="preserve">
+    <value>Data exchange available</value>
+    <comment>user</comment>
+  </data>
+  <data name="txtCallSign" xml:space="preserve">
+    <value>Call sign</value>
+    <comment>4.0.3</comment>
+  </data>
+  <data name="fCountries" xml:space="preserve">
+    <value>Countries</value>
+    <comment>4.0.3</comment>
+  </data>
+  <data name="txtRolePMSPersonnelManager" xml:space="preserve">
+    <value>Personnel manager</value>
+  </data>
+  <data name="mCantDelUsedCountry" xml:space="preserve">
+    <value>It is impossible to remove this country, as this country is already used!</value>
+    <comment>4.1.0</comment>
+  </data>
+  <data name="mConfirmDelCountry" xml:space="preserve">
+    <value>Are you sure you want to delete the country?</value>
+  </data>
+  <data name="txtDownloadSpares" xml:space="preserve">
+    <value>Загрузить СЗЧ из файла</value>
+    <comment>СЗЧ</comment>
+  </data>
+  <data name="txtRoles" xml:space="preserve">
+    <value>Роли</value>
+    <comment>BUDGET</comment>
+  </data>
+</root>

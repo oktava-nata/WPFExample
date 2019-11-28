@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="fBudgetItem" xml:space="preserve">
+    <value>Budget item</value>
+  </data>
+  <data name="fBudgetItems" xml:space="preserve">
+    <value>Budget items</value>
+  </data>
+  <data name="fBudgetPlanning" xml:space="preserve">
+    <value>Budget planning</value>
+  </data>
+  <data name="fCurrency" xml:space="preserve">
+    <value>Currency</value>
+  </data>
+  <data name="fPlanningBudgetItem" xml:space="preserve">
+    <value>Item planning</value>
+  </data>
+  <data name="fSupplier" xml:space="preserve">
+    <value>Supplier</value>
+  </data>
+  <data name="fSuppliers" xml:space="preserve">
+    <value>Suppliers</value>
+  </data>
+  <data name="txtAddress" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="txtAprilA" xml:space="preserve">
+    <value>April actual</value>
+  </data>
+  <data name="txtAugustA" xml:space="preserve">
+    <value>August actual</value>
+  </data>
+  <data name="txtBudgetActual" xml:space="preserve">
+    <value>Budget actual</value>
+  </data>
+  <data name="txtBudgetCode" xml:space="preserve">
+    <value>Budget сode</value>
+  </data>
+  <data name="txtBudgetCurrency" xml:space="preserve">
+    <value>Budget currency</value>
+  </data>
+  <data name="txtBudgetItem" xml:space="preserve">
+    <value>Budget item</value>
+  </data>
+  <data name="txtBudgetPlanning" xml:space="preserve">
+    <value>Budget planning</value>
+  </data>
+  <data name="txtCode" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="txtConscientiousSuppliers" xml:space="preserve">
+    <value>Conscientious suppliers</value>
+  </data>
+  <data name="txtContactPerson" xml:space="preserve">
+    <value>Contact person</value>
+  </data>
+  <data name="txtCurrencyCode" xml:space="preserve">
+    <value>Currency</value>
+  </data>
+  <data name="txtCurrencyName" xml:space="preserve">
+    <value>Currency name</value>
+  </data>
+  <data name="txtDecemberA" xml:space="preserve">
+    <value>December actual</value>
+  </data>
+  <data name="txtDescription" xml:space="preserve">
+    <value>Item name (Russian)</value>
+  </data>
+  <data name="txtDescriptionEng" xml:space="preserve">
+    <value>Item name (English)</value>
+  </data>
+  <data name="txtDesсriptionUse" xml:space="preserve">
+    <value>Desription</value>
+  </data>
+  <data name="txtDeviationInBaseCurrency" xml:space="preserve">
+    <value>Deviation (USD)</value>
+  </data>
+  <data name="txtDeviationPercent" xml:space="preserve">
+    <value>Deviation (%)</value>
+  </data>
+  <data name="txtFebruaryA" xml:space="preserve">
+    <value>February actual</value>
+  </data>
+  <data name="txtFiles" xml:space="preserve">
+    <value>Files</value>
+  </data>
+  <data name="txtGroupItem" xml:space="preserve">
+    <value>Group item</value>
+  </data>
+  <data name="txtInBudgetTable" xml:space="preserve">
+    <value>In budget (default)</value>
+  </data>
+  <data name="txtInvoicesRegistry" xml:space="preserve">
+    <value>Invoices registry</value>
+  </data>
+  <data name="txtItem" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="txtItemTotal" xml:space="preserve">
+    <value>Item total</value>
+  </data>
+  <data name="txtItemTotalActual" xml:space="preserve">
+    <value>Item total actual</value>
+  </data>
+  <data name="txtJanuaryA" xml:space="preserve">
+    <value>January actual</value>
+  </data>
+  <data name="txtJulyA" xml:space="preserve">
+    <value>July actual</value>
+  </data>
+  <data name="txtJuneA" xml:space="preserve">
+    <value>June actual</value>
+  </data>
+  <data name="txtMarchA" xml:space="preserve">
+    <value>March actual</value>
+  </data>
+  <data name="txtMayA" xml:space="preserve">
+    <value>May actual</value>
+  </data>
+  <data name="txtNoBaseCurrency" xml:space="preserve">
+    <value>No base currency selected</value>
+  </data>
+  <data name="txtNotConscientiousSuppliers" xml:space="preserve">
+    <value>Not conscientious suppliers</value>
+  </data>
+  <data name="txtNovemberA" xml:space="preserve">
+    <value>November actual</value>
+  </data>
+  <data name="txtOctoberA" xml:space="preserve">
+    <value>October actual</value>
+  </data>
+  <data name="txtParentArticle" xml:space="preserve">
+    <value>Parent article</value>
+  </data>
+  <data name="txtPhone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="txtQuarter" xml:space="preserve">
+    <value>Quarter</value>
+  </data>
+  <data name="txtQuarterActual" xml:space="preserve">
+    <value>Quarter actual</value>
+  </data>
+  <data name="txtReceiptsRegistre" xml:space="preserve">
+    <value>Receipts registre</value>
+  </data>
+  <data name="txtSeptemberA" xml:space="preserve">
+    <value>September actual</value>
+  </data>
+  <data name="txtSpecification" xml:space="preserve">
+    <value>Specification</value>
+  </data>
+  <data name="txtSupplier" xml:space="preserve">
+    <value>Supplier</value>
+  </data>
+  <data name="txtSupplierName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="txtTotal" xml:space="preserve">
+    <value>Total:</value>
+  </data>
+  <data name="txtTotalFact" xml:space="preserve">
+    <value>Total fact:</value>
+  </data>
+  <data name="txtValueInBaseCurrency" xml:space="preserve">
+    <value>Value (USD)</value>
+  </data>
+  <data name="txtVAT" xml:space="preserve">
+    <value>VAT</value>
+  </data>
+  <data name="fShipowners" xml:space="preserve">
+    <value>Shipowners</value>
+  </data>
+  <data name="txtShipownerName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="txtCopyBudgetItem" xml:space="preserve">
+    <value>Статья будет скопирована для выбраного судовладельца вместе с подстатьями.</value>
+  </data>
+  <data name="txtBudgetCompany" xml:space="preserve">
+    <value>Company budget</value>
+  </data>
+  <data name="txtBudgetCompanyCheckBox" xml:space="preserve">
+    <value>Used in company budget</value>
+  </data>
+  <data name="txtBudgetFleet" xml:space="preserve">
+    <value>Fleet budget</value>
+  </data>
+  <data name="txtShipowners" xml:space="preserve">
+    <value>Shipowners</value>
+  </data>
+</root>

@@ -1,0 +1,94 @@
+﻿<Window x:Class="BUDGETModule.Views.Directories.Suppliers.SupplierModifyView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:baseLib="clr-namespace:BaseLib.Services;assembly=BaseLib" 
+        xmlns:convertTrim="clr-namespace:Converters.Trim;assembly=Converters" 
+        xmlns:convertToBool="clr-namespace:Converters.ToBool;assembly=Converters"
+        xmlns:convertToVisibility="clr-namespace:Converters.ToVisibility;assembly=Converters"
+        xmlns:strRes="clr-namespace:BUDGETModule.Properties"
+        xmlns:strCommonRes="clr-namespace:Resources.Properties;assembly=Resources"
+        xmlns:MVVM="clr-namespace:MVVMHelper;assembly=MVVMHelper"
+        xmlns:controls="clr-namespace:Controls;assembly=Controls"  
+        mc:Ignorable="d"
+        Height="280" Width="550" ResizeMode="NoResize"
+        Style="{StaticResource StandartWindowStyle}" WindowStartupLocation="CenterScreen" 
+        Title="{x:Static strRes:Resources.fSupplier}"
+        MVVM:WindowExtension.IsClose="{Binding Path=IsCloseView}"
+        MVVM:WindowExtension.Closing="{Binding Path=OnClosingWindow}">
+
+    <Grid>
+        <Grid.Resources>
+            <convertToVisibility:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+            <convertToBool:ActionModeToBoolConverter x:Key="ActionModeToEnableConverter"/>
+            <convertToVisibility:ActionModeToVisibilityConverter x:Key="actionModeConverter"/>
+            <convertToBool:ActionModeToBoolReverseConverter x:Key="ActionModeToEnableReverseConverter" />
+            <convertToVisibility:EnumToVisibilityConverter x:Key="EnumToVisibilityConverter" />
+            <convertToBool:ObjIsNotNullConverter x:Key="ObjIsNotNullConverter" />
+            <convertToVisibility:ConjunctionBoolValuesToVisibleMultiConverter x:Key="ConjunctionBoolValuesToVisibleMultiConverter" />
+            <convertToBool:DisjunctionBoolValuesMultiConverter x:Key="DisjunctionBoolValuesMultiConverter" />
+            <convertToBool:ConjunctionBoolValuesMultiConverter x:Key="ConjunctionBoolValuesMultiConverter" />
+            <convertTrim:TrimConverter x:Key="TrimConverter"/>
+            <FrameworkElement x:Key="ProxyElement" DataContext="{Binding Path=.}"/>
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- форма добавления/редактирования -->
+        <Grid Style="{StaticResource InnerFormGrid}" DataContext="{Binding Path=ModifyVM}" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+
+            <CheckBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Content="{x:Static strRes:Resources.txtNotConscientiousSuppliers}" IsChecked="{Binding Path=ModifyTargetVM.IsUnscrupulousSupplier}"/>
+            <TextBlock  Grid.Row="2" Grid.Column="0" Text="{x:Static strRes:Resources.txtSupplierName}" VerticalAlignment="Top"/>
+            <TextBox Grid.Row="2" Grid.Column="1" MVVM:FocusExtension.IsFocused="{Binding Path=IsFocusedToStartModify}"
+                                 Text="{Binding Path=ModifyTargetVM.Name, Converter={StaticResource TrimConverter}, ValidatesOnDataErrors=True}"/>
+            <TextBlock  Grid.Row="3" Grid.Column="0" Text="{x:Static strRes:Resources.txtPhone}" VerticalAlignment="Top"/>
+            <TextBox Grid.Row="3" Grid.Column="1"
+                                 Text="{Binding Path=ModifyTargetVM.Phone, Converter={StaticResource TrimConverter}, ValidatesOnDataErrors=True}"  />
+
+            <TextBlock  Grid.Row="4" Grid.Column="0" Text="{x:Static strRes:Resources.txtContactPerson}" VerticalAlignment="Top" />
+            <TextBox Grid.Row="4" Grid.Column="1"                               
+                                 Text="{Binding Path=ModifyTargetVM.ContactPerson, Converter={StaticResource TrimConverter}, ValidatesOnDataErrors=True}"/>
+            <TextBlock  Grid.Row="5" Grid.Column="0" Text="{x:Static strRes:Resources.txtAddress}" VerticalAlignment="Top"/>
+            <TextBox Grid.Row="5" Grid.Column="1" Height="40"
+                                 Text="{Binding Path=ModifyTargetVM.Address, Converter={StaticResource TrimConverter}, ValidatesOnDataErrors=True}" />
+            
+            <TextBlock Grid.Row="6" Grid.Column="0" Text="{x:Static strRes:Resources.txtShipowners}"/>
+            <controls:MultiSelectPanel Grid.Row="6" Grid.Column="1" HorizontalAlignment="Left" MaxWidth="600" DataContext="{Binding Path=ShipOwnerSelectVM}"/>
+            <CheckBox Grid.Row="7" Grid.Column="1"  Content="{x:Static strRes:Resources.txtBudgetCompanyCheckBox}" IsChecked="{Binding Path=ModifyTargetVM.IsUsedInCompanyBudget}"/>
+
+        </Grid>
+
+        <!--Кнопки Сохранить/Применить/Добавить/Отмена-->
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="15">
+            <Button Style="{StaticResource BottomButton}"  Content="{x:Static strCommonRes:Resources.txtSave}" Command="{Binding Path=ModifyVM.SaveCommand}"
+                                Visibility="{Binding Path=ModifyVM.Action, Converter={StaticResource actionModeConverter}, ConverterParameter={x:Static baseLib:ActionMode.Editing}}"/>
+            <Button Style="{StaticResource BottomButton}"  Content="{x:Static strCommonRes:Resources.txtAply}"  Command="{Binding Path=ModifyVM.AplyCommand}"
+                                Visibility="{Binding Path=ModifyVM.Action, Converter={StaticResource actionModeConverter}, ConverterParameter={x:Static baseLib:ActionMode.Adding}}"/>
+            <Button Style="{StaticResource BottomButton}"  Content="{x:Static strCommonRes:Resources.txtAdd}"  Command="{Binding Path=ModifyVM.SaveCommand}"
+                                Visibility="{Binding Path=ModifyVM.Action, Converter={StaticResource actionModeConverter}, ConverterParameter={x:Static baseLib:ActionMode.Adding}}"/>
+            <Button Style="{StaticResource BottomButton}"  Content="{x:Static strCommonRes:Resources.txtCancel}"  Command="{Binding Path=ModifyVM.CancelCommand}"
+                                Visibility="{Binding Path=ModifyVM.Action, Converter={StaticResource actionModeConverter}, ConverterParameter={x:Static baseLib:ActionMode.Modification}}"
+                    MVVM:FocusExtension.IsFocused="{Binding Path=IsFocusedToFinishEnter}"/>
+        </StackPanel>
+
+    </Grid>
+</Window>

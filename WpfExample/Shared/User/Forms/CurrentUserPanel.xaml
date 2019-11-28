@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="Shared.User.Forms.CurrentUserPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+              xmlns:strRes="clr-namespace:Shared.Properties"
+             mc:Ignorable="d" 
+             d:DesignHeight="60" d:DesignWidth="300">
+    <Border Margin="5">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel VerticalAlignment="Top">
+                <TextBlock x:Name="lblUserName" Text="{Binding Path=Name}" 
+                           TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" TextAlignment="Right" FontWeight="Bold"/>
+                <!--<TextBlock  Text="{Binding Path=Login}" 
+                            TextWrapping="NoWrap" FontWeight="Bold" TextTrimming="CharacterEllipsis" TextAlignment="Right"/>-->
+            </StackPanel>
+            <StackPanel Grid.Column="1" VerticalAlignment="Center" Orientation="Horizontal">
+                <Button x:Name="btnEdit" Style="{StaticResource TransparentButton}" 
+                    ToolTip="{x:Static strRes:Resources.txtEditPersonalData}" Click="btnEdit_Click">
+                    <Image Source="{StaticResource BtnUser_Blue}"   />
+                </Button>
+                <Button Style="{StaticResource TransparentButton}" 
+                    ToolTip="{x:Static strRes:Resources.txtLogOut}" Click="BtnLogOut_Click">
+                    <Image Source="{StaticResource BtnLogout_Blue}"   />
+                </Button>
+            </StackPanel>
+        </Grid>
+
+    </Border>
+
+</UserControl>

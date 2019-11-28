@@ -1,0 +1,8 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--button blue-->
+    <ImageSource x:Key="BtnLogout_Blue">button blue/logout.png</ImageSource>
+    <ImageSource x:Key="BtnLogin_Blue">button blue/login.png</ImageSource>
+    <ImageSource x:Key="BtnUser_Blue">button blue/user.png</ImageSource>
+</ResourceDictionary>

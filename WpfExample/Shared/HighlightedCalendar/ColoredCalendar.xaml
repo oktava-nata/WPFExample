@@ -1,0 +1,165 @@
+﻿<UserControl x:Class="Shared.HighlightedCalendar.ColoredCalendar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             xmlns:validators="clr-namespace:Resources.Validators;assembly=Resources"
+             xmlns:convertToVisibility="clr-namespace:Converters.ToVisibility;assembly=Converters"
+             xmlns:convertToBool="clr-namespace:Converters.ToBool;assembly=Converters"
+             xmlns:strCommonRes="clr-namespace:Resources.Properties;assembly=Resources"
+             x:Name="calendar"
+             d:DesignHeight="300" d:DesignWidth="300" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <Style x:Key="CalendarListBox" TargetType="{x:Type ListBox}">
+            <Setter Property="SnapsToDevicePixels" Value="true"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled"/>
+            <Setter Property="ScrollViewer.CanContentScroll" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListBox}">
+                        <Border Name="Border" Background="{StaticResource BackgroundShipBrush}"  Height="140">
+                            <WrapPanel Margin="0" IsItemsHost="True" ItemWidth="30" ItemHeight="20" Orientation="Vertical"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!--Стиль для дня-->
+        <Style x:Key="VisibleDayListBoxItem" TargetType="{x:Type ListBoxItem}">
+            <Setter Property="SnapsToDevicePixels" Value="true"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="AllowDrop" Value="True"/>
+            <EventSetter Event="ListBoxItem.PreviewMouseDown" Handler="VisibleDay_PreviewMouseDown" />
+            <EventSetter Event="ListBoxItem.DragOver" Handler="VisibleDay_DragOver" />
+            <!--<EventSetter Event="ListBoxItem.Drop" Handler="HalfHourItem_Drop"/>-->
+            <EventSetter Event="ListBoxItem.LostMouseCapture" Handler="VisibleDay_LostMouseCapture"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                        <Grid >
+                            <ContentPresenter />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!--Шаблон отображения данных для дня-->
+        <DataTemplate x:Key="VisualDayDataTemlate" DataType="{x:Type ListBoxItem}">
+            <DataTemplate.Resources>
+                <convertToVisibility:BoolToVisibilityConverter x:Key="boolToVisibilityConverter"/>                
+                <convertToBool:BoolToReverseConverter x:Key="boolToReverseConv"/>
+                <convertToVisibility:ConjunctionBoolValuesToVisibleMultiConverter x:Key="ConjBoolValuesToVisibleMultiConv"/>
+            </DataTemplate.Resources>
+            <Grid Background="{StaticResource BackgroundShipBrush}">
+                <!--Выделение-->
+                <Grid Background="{Binding ElementName=calendar, Path=SelectionBrush}">
+                    <Grid.Visibility>
+                        <MultiBinding Converter="{StaticResource ConjBoolValuesToVisibleMultiConv}">
+                            <Binding Path="Selected"/>
+                            <Binding Path="SelectionShapeLikeColoring" ElementName="calendar" Converter="{StaticResource boolToReverseConv}"/>
+                        </MultiBinding>
+                    </Grid.Visibility>
+                </Grid>
+                <!--Цветная подложка для дня-->
+                <Border Margin="2" CornerRadius="4"
+                        Background="{Binding Path=ColoredDay.Brush}" ToolTip="{Binding Path=ColoredDay.ToolTip}"/>
+
+                <!--Выделение в форме подложки-->
+                <Border Margin="2" CornerRadius="4"
+                        Background="{Binding ElementName=calendar, Path=SelectionBrush}" 
+                        ToolTip="{Binding Path=ColoredDay.ToolTip}">
+                    <Border.Visibility>
+                        <MultiBinding Converter="{StaticResource ConjBoolValuesToVisibleMultiConv}">
+                            <Binding Path="Selected"/>
+                            <Binding Path="SelectionShapeLikeColoring" ElementName="calendar" />
+                        </MultiBinding>
+                    </Border.Visibility>
+                </Border>
+
+                <TextBlock Text="{Binding Path=ColoredDay.Date.Day}" 
+                           VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center" ToolTip="{Binding Path=ColoredDay.ToolTip}"/>
+            </Grid>
+        </DataTemplate>
+
+        <validators:MonthNumberToMonthNominativeConverter x:Key="monthNumberToMonthNominativeConverter"/>
+    </UserControl.Resources>
+    <Grid HorizontalAlignment="Left" MinWidth="220" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <!--Отображение месяца-->
+        <Grid HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition MinWidth="120"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+
+            <!--на месяц назад-->
+            <Button Grid.Column="0" Style="{StaticResource TransparentButton}" 
+                    ToolTip="{x:Static strCommonRes:Resources.txtGoLast}" Click="BtnLast_Click">
+                <Image Source="{StaticResource BtnArrowLeft_Blue}" />
+            </Button>
+            <!--месяц, год-->
+            <TextBlock  Grid.Column="1" Margin="0" HorizontalAlignment="Center"  FontWeight="Bold">
+                <TextBlock Text="{Binding ElementName=calendar ,Path=VisibleMonth, Converter={StaticResource monthNumberToMonthNominativeConverter}}"/>
+                <TextBlock Text="{Binding ElementName=calendar ,Path=VisibleYear}"/>               
+            </TextBlock>
+            <!--на месяц вперед-->
+            <Button Grid.Column="2" Style="{StaticResource TransparentButton}" 
+                    ToolTip="{x:Static strCommonRes:Resources.txtGoNext}" Click="BtnNext_Click">
+                <Image Source="{StaticResource BtnArrowRight_Blue}" />
+            </Button>
+        </Grid>
+        <!--календарь-->
+        <Grid Grid.Row="1" HorizontalAlignment="Left">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel MinWidth="35">
+                <StackPanel.Resources>
+                    <Style TargetType="TextBlock" BasedOn="{StaticResource StandartTextBlockStyle}">                        
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                    </Style>
+                    <Style TargetType="Grid" >
+                        <Setter Property="Height" Value="20"/>
+                        <Setter Property="Margin" Value="2,0"/>
+                    </Style>
+                </StackPanel.Resources>
+                <Grid>
+                    <TextBlock Text="{x:Static strCommonRes:Resources.txtMon}" />
+                </Grid>
+                <Grid>
+                <TextBlock Text="{x:Static strCommonRes:Resources.txtTues}"/>
+                </Grid>
+                <Grid>
+                    <TextBlock Text="{x:Static strCommonRes:Resources.txtWed}"/>
+                </Grid>
+                <Grid>
+                    <TextBlock Text="{x:Static strCommonRes:Resources.txtThurs}"/>
+                </Grid>
+                <Grid>
+                    <TextBlock Text="{x:Static strCommonRes:Resources.txtFri}"/>
+                </Grid>
+                <Grid>
+                    <TextBlock Text="{x:Static strCommonRes:Resources.txtSat}"/>
+                </Grid>
+                <Grid>
+                    <TextBlock Text="{x:Static strCommonRes:Resources.txtSun}"/>
+                </Grid>                
+            </StackPanel>
+            <ListBox Grid.Column="1" Style="{StaticResource CalendarListBox}" 
+             HorizontalAlignment="Left" VerticalAlignment="Top"
+             ItemsSource="{Binding ElementName=calendar, Path=VisibleDates}"
+                 ItemContainerStyle="{StaticResource VisibleDayListBoxItem}"  
+             ItemTemplate="{StaticResource VisualDayDataTemlate}"/>
+        </Grid>
+    </Grid>
+</UserControl>

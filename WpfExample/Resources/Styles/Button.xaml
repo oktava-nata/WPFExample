@@ -1,0 +1,60 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:strRes="clr-namespace:Resources.Properties">
+
+    <!-- Button -->
+    <Style x:Key="BaseButtonKey" TargetType="Button">
+        <Setter Property="SnapsToDevicePixels" Value="true" />
+        <Setter Property="OverridesDefaultStyle" Value="true" />
+        <Setter Property="MinHeight" Value="20" />
+        <Setter Property="MinWidth" Value="15" />
+        <Setter Property="Background" Value="{StaticResource BackgroundNormalShipBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BorderNormalShipBrush}"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Template" >
+            <Setter.Value>
+                <ControlTemplate TargetType="Button" >
+                    <Border BorderThickness="1"                            
+				            BorderBrush="{TemplateBinding BorderBrush}" 
+				            Background="{TemplateBinding Background}">
+                        <Grid >
+                            <Grid.Resources>
+                                <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource StandartTextBlockStyle}">
+                                    <Setter Property="TextWrapping" Value="Wrap" />
+                                    <Setter Property="VerticalAlignment" Value="Center" />
+                                    <Setter Property="HorizontalAlignment" Value="Center" />
+                                    <Setter Property="TextAlignment" Value="Center" />
+                                    <Setter Property="Foreground" Value="{StaticResource ForegroundHeaderShipBrush}" />                                    
+                                </Style>
+                            </Grid.Resources>
+                            <TextBlock Text="{TemplateBinding Content}" x:Name="ButtonText" Margin="2,0"/>                            
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" Value="{StaticResource BorderHighlightedShipBrush}" />
+                            <Setter Property="Background" Value="{StaticResource BackgroundHighlightedShipBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="{StaticResource BackgroundSelectedShipBrush}"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource BorderSelectedShipBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">                            
+                            <Setter Property="Background" Value="{StaticResource BackgroundEnableShipBrush}"/>
+                            <Setter TargetName="ButtonText" Property="Foreground" Value="{StaticResource ForegroundEnableShipBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="BorderBrush" Value="{StaticResource ForegroundShipBrush}"/>                            
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="Button" BasedOn="{StaticResource BaseButtonKey}">
+    </Style>
+
+   
+    
+</ResourceDictionary>

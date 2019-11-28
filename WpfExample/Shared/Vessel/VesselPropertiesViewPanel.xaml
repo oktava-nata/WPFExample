@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="Shared.Vessel.VesselPropertiesViewPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:strRes="clr-namespace:Shared.Properties"      
+             xmlns:convertTrim="clr-namespace:Converters.Trim;assembly=Converters"
+             xmlns:convertBool="clr-namespace:Converters.ToBool;assembly=Converters"    
+             xmlns:convertToVisibility="clr-namespace:Converters.ToVisibility;assembly=Converters"
+             xmlns:convertToStr="clr-namespace:Converters.ToStringFormat;assembly=Converters"
+             xmlns:strCommonRes="clr-namespace:Resources.Properties;assembly=Resources"
+             xmlns:controls="clr-namespace:MVVMHelper.Controls;assembly=MVVMHelper"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="400" >
+    <UserControl.Resources>
+        <convertTrim:TrimConverter x:Key="TrimConverter"/>
+        <convertToStr:DateToShortDateStringConverter x:Key="DateConverter"/>
+        <convertToStr:ENRUToStringConverter  x:Key="ENRUToStringConverter"/>
+    </UserControl.Resources>
+
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" MinWidth="100"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <!--Порядковый номер-->
+        <TextBlock Grid.Row="0" Grid.Column="0"  Text="{x:Static strCommonRes:Resources.txtSortNumberText}"/>
+        <TextBlock Grid.Row="0" Grid.Column="1" Style="{StaticResource BoldLabelTrim}" Text="{Binding Path=SortNumber}"/>
+
+        <!--IMO-->
+        <TextBlock Grid.Row="1" Grid.Column="0"  Text="{x:Static strCommonRes:ResourcesReplaced.txtIMO}"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" Style="{StaticResource BoldLabelTrim}" Text="{Binding Path=Number}"/>
+
+        <!--Название-->
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="{x:Static strCommonRes:ResourcesReplaced.txtVesselName}" />
+        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Path=Name}" Style="{StaticResource BoldLabelTrim}"/>
+
+        <!--Группа судна-->
+        <TextBlock Grid.Row="3" Grid.Column="0"  Text="{x:Static strCommonRes:ResourcesReplaced.txtShipGroup}"/>
+        <TextBlock Grid.Row="3" Grid.Column="1" Style="{StaticResource BoldLabelTrim}" Text="{Binding Path=Group.Name}"/>
+        
+        <!--Тип судна-->
+        <TextBlock Grid.Row="4" Grid.Column="0"  Text="{x:Static strCommonRes:ResourcesReplaced.txtVesselType}"/>
+        <TextBlock Grid.Row="4" Grid.Column="1" Style="{StaticResource BoldLabelTrim}" Text="{Binding Path=Type, Converter={StaticResource ENRUToStringConverter}}"/> 
+
+        <!--Дата выпуска-->
+        <TextBlock  Grid.Row="5" Grid.Column="0" Text="{x:Static strCommonRes:ResourcesReplaced.txtIssueDate}"/>
+        <TextBlock Grid.Row="5" Grid.Column="1" Style="{StaticResource BoldLabelTrim}"  Text="{Binding Path=IssueDate, Converter={StaticResource DateConverter}}" />
+
+    </Grid>
+</UserControl>

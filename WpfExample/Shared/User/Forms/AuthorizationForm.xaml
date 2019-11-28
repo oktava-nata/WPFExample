@@ -1,0 +1,55 @@
+﻿<Window x:Class="Shared.User.Forms.AuthorizationForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:strRes="clr-namespace:Shared.Properties"  
+        xmlns:templ="clr-namespace:Resources.Templates;assembly=Resources"
+        xmlns:validators="clr-namespace:Resources.Validators;assembly=Resources"
+        xmlns:convertTrim="clr-namespace:Converters.Trim;assembly=Converters"
+        Title="{x:Static strRes:Resources.fAuthorization}"   
+        WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" MinWidth="300" Style="{StaticResource StandartWindowStyle}">
+    <Grid>
+        <Grid.Resources>
+            <convertTrim:TrimConverter x:Key="TrimConverter"/>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <!-- сетка для ввода данных -->
+        <Grid x:Name="EditFields" Style="{StaticResource InnerFormGrid}" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" MinWidth="100"/>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>            
+
+            <!--Логин-->
+            <TextBlock Grid.Row="0" Grid.Column="0"  Text="{x:Static strRes:Resources.txtUserLogin}"/>
+            <TextBox Grid.Row="0" Grid.Column="1" x:Name="TxtLogin">
+                <TextBox.Text>
+                    <Binding Path="Login" Converter="{StaticResource TrimConverter}">
+                        <Binding.ValidationRules>
+                            <validators:NotNullLengthRule />
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>          
+
+            <!--Пароль-->
+            <TextBlock Grid.Row="1" Grid.Column="0"  Text="{x:Static strRes:Resources.txtPass}"/>
+            <PasswordBox Grid.Row="1" Grid.Column="1" x:Name="TxtPass" Style="{StaticResource PasswordBoxOk}" LostFocus="TxtPass_LostFocus"/>
+            
+            <!--сохранить пароль-->
+            <CheckBox Grid.Row="2" Grid.Column="1" Content="{x:Static strRes:Resources.txtSavePass}" x:Name="chkSavePass"/>
+        </Grid>
+        <!--панель с кнопками -->
+        <templ:PanelBottom Grid.Row="2" ></templ:PanelBottom>
+        <StackPanel Grid.Row="2" Style="{StaticResource BottomButtonGroupForm}"  VerticalAlignment="Bottom" >
+            <Button Style="{StaticResource BottomButton}" Content="{x:Static strRes:Resources.txtEnter}" Click="BtnLogin_Click" x:Name="BtnLogin"></Button>
+        </StackPanel>
+    </Grid>
+</Window>

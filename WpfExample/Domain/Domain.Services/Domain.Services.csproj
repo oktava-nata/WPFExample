@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Specifications\ShipArea\**" />
+    <EmbeddedResource Remove="Specifications\ShipArea\**" />
+    <None Remove="Specifications\ShipArea\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Domain.Common\Domain.Common.csproj" />
+    <ProjectReference Include="..\Domain.EFContexts\Domain.EFContexts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="BaseLib">
+      <HintPath>..\..\..\packages\innerDLL\BaseLib.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\..\packages\entityframework\6.3.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\..\packages\entityframework\6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
